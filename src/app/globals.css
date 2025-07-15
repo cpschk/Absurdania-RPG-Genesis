@@ -92,3 +92,15 @@
     background-position: 0% 50%;
   }
 }
+@keyframes pulse-grow {
+      0%, 100% {
+        transform: scale(1); /* Tamaño normal al inicio y al final */
+      }
+      50% {
+        transform: scale(1.5); /* Crece un 10% a la mitad de la animación */
+      }
+    }
+
+    .animate-pulse-grow {
+      animation: pulse-grow 1.5s ease-in-out infinite; /* Aplica la animación */
+    }
