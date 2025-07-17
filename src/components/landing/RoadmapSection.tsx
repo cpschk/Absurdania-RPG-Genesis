@@ -8,12 +8,16 @@ type RoadmapItemProps = {
 function RoadmapItem({ version, title, features, gradient }: RoadmapItemProps) {
   return (
     <div className="mb-12 last:mb-0">
-      <h3 className={`text-2xl font-bold mb-3 bg-gradient-to-r ${gradient} text-transparent bg-clip-text`}>
-        {version} – {title}
-      </h3>
-      <ul className="space-y-2 text-gray-300 list-disc list-inside pl-4">
-        {features.map((feature, i) => <li key={i}>{feature}</li>)}
-      </ul>
+      <div className="p-4 rounded-xl mb-4 bg-gray-700/30 backdrop-blur-md border border-gray-500/50 shadow-lg">
+        <h3 className={`text-2xl font-bold bg-gradient-to-r ${gradient} text-transparent bg-clip-text`}>
+          {version} – {title}
+        </h3>
+      </div>
+      <div className="p-6 rounded-xl border border-purple-500/30 bg-gray-900/50">
+        <ul className="space-y-3 text-gray-300 list-disc list-inside pl-2">
+            {features.map((feature, i) => <li key={i}>{feature}</li>)}
+        </ul>
+      </div>
     </div>
   );
 }
