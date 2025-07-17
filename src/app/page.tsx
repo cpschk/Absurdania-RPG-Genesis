@@ -79,29 +79,31 @@ export default function Home() {
 
         <section id="features" className="py-20 sm:py-32 bg-gray-900">
           <div className="container mx-auto max-w-5xl px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
-              ¿Con qué cuenta ya el juego?
-            </h2>
-            <div className="flex justify-center">
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md"
-              >
-                <CarouselContent>
-                  {features.map((feature, index) => (
-                    <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
-                      <div className="p-1 h-full">
-                        <FeatureCard icon={feature.icon} title={feature.title} className="h-full" />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="block" />
-                <CarouselNext className="block" />
-              </Carousel>
+             <div className="max-w-2xl mx-auto p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+                  ¿Con qué cuenta ya el juego?
+                </h2>
+                <div className="flex justify-center">
+                  <Carousel
+                    opts={{
+                      align: "start",
+                      loop: true,
+                    }}
+                    className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                  >
+                    <CarouselContent>
+                      {features.map((feature, index) => (
+                        <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
+                          <div className="p-1 h-full">
+                            <FeatureCard icon={feature.icon} title={feature.title} className="h-full" />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="block" />
+                    <CarouselNext className="block" />
+                  </Carousel>
+                </div>
             </div>
           </div>
         </section>
