@@ -79,7 +79,7 @@ export default function Home() {
         </section>
 
         <section id="roadmap" className="py-20 sm:py-32 bg-gray-800">
-           <div className="container mx-auto max-w-6xl px-4">
+           <div className="container mx-auto max-w-2xl px-4">
               <RoadmapSection />
            </div>
         </section>
@@ -104,7 +104,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
               Galería Absurda
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
               {characters.map((char, index) => (
                 <CharacterCard key={index} icon={char.icon} name={char.name} />
               ))}
