@@ -20,7 +20,7 @@ export function Hero() {
           <CTAButton>
             <span className="flex flex-col items-center">
               <span>¡Únete al caos creativo!</span>
-              <span className="text-sm font-normal opacity-80">En Discord...</span>
+              <span className="text-sm font-normal opacity-80">En Discord... por ahora</span>
             </span>
           </CTAButton>
         </Link>
