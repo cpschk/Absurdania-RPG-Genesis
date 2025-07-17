@@ -17,7 +17,12 @@ export function Hero() {
           El juego donde el caos piensa y el absurdo tiene reglas
         </p>
         <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
-          <CTAButton>¡Únete al caos creativo!</CTAButton>
+          <CTAButton>
+            <span className="flex flex-col items-center">
+              <span>¡Únete al caos creativo!</span>
+              <span className="text-sm font-normal opacity-80">En Discord...</span>
+            </span>
+          </CTAButton>
         </Link>
       </div>
     </div>
