@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CTAButton } from "./CTAButton";
 
 export function Hero() {
@@ -15,7 +16,9 @@ export function Hero() {
         <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
           El juego donde el caos piensa y el absurdo tiene reglas
         </p>
-        <CTAButton>¡Únete al caos creativo!</CTAButton>
+        <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
+          <CTAButton>¡Únete al caos creativo!</CTAButton>
+        </Link>
       </div>
     </div>
   );
