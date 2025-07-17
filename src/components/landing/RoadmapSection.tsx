@@ -9,7 +9,7 @@ function RoadmapItem({ version, title, features, gradient }: RoadmapItemProps) {
   return (
     <div className="mb-8 relative pt-10">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 w-11/12">
-          <div className="p-4 rounded-xl bg-gray-700/30 backdrop-blur-md border border-gray-500/50 shadow-lg">
+          <div className="p-4 rounded-xl bg-gray-700/50 backdrop-blur-md border border-gray-500/50 shadow-lg">
               <h3 className={`text-2xl font-bold bg-gradient-to-r ${gradient} text-transparent bg-clip-text text-center`}>
               {version} – {title}
               </h3>
@@ -64,6 +64,9 @@ export function RoadmapSection() {
 
   return (
     <div className="max-w-2xl mx-auto p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
+        Roadmap Visual
+      </h2>
       {roadmapData.map((item, index) => (
         <RoadmapItem key={index} {...item} />
       ))}

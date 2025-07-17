@@ -92,15 +92,15 @@ export default function Home() {
               >
                 <CarouselContent>
                   {features.map((feature, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
                       <div className="p-1 h-full">
                         <FeatureCard icon={feature.icon} title={feature.title} className="h-full" />
                       </div>
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
+                <CarouselPrevious className="block" />
+                <CarouselNext className="block" />
               </Carousel>
             </div>
           </div>
@@ -108,9 +108,6 @@ export default function Home() {
 
         <section id="roadmap" className="py-20 sm:py-32 bg-gray-800">
            <div className="container mx-auto max-w-6xl px-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-                Roadmap Visual
-              </h2>
               <RoadmapSection />
            </div>
         </section>
