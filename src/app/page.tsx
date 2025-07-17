@@ -9,7 +9,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
 
 const features = [
-  { icon: '🦀', title: 'Combate tipo Piedra-Papel-Jaiba con dado20' },
+  { icon: '✊✋✌️', title: 'Combate tipo Piedra-Papel-Tijera con dado20' },
   { icon: '🤖', title: 'Narrativa generada por IA' },
   { icon: '👾', title: 'Enemigos con historia propia' },
   { icon: '📜', title: 'Misiones y desbloqueos' },
