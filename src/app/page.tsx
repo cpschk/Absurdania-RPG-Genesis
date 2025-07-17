@@ -82,25 +82,27 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
               ¿Con qué cuenta ya el juego?
             </h2>
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent>
-                {features.map((feature, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                    <div className="p-1 h-full">
-                      <FeatureCard icon={feature.icon} title={feature.title} className="h-full" />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex" />
-              <CarouselNext className="hidden sm:flex" />
-            </Carousel>
+            <div className="flex justify-center">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+              >
+                <CarouselContent>
+                  {features.map((feature, index) => (
+                    <CarouselItem key={index}>
+                      <div className="p-1 h-full">
+                        <FeatureCard icon={feature.icon} title={feature.title} className="h-full" />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
           </div>
         </section>
 
