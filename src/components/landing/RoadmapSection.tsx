@@ -8,7 +8,7 @@ type RoadmapItemProps = {
 function RoadmapItem({ version, title, features, gradient }: RoadmapItemProps) {
   return (
     <div className="mb-8 relative">
-      <div className="relative z-10 p-4 rounded-xl bg-gray-800/80 backdrop-blur-md border border-gray-500/50 shadow-lg">
+      <div className="relative z-10 p-4 rounded-xl bg-gray-700/90 backdrop-blur-md border border-gray-500/50 shadow-lg">
           <h3 className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${gradient} text-transparent bg-clip-text text-center`}>
           {version} – {title}
           </h3>
