@@ -38,15 +38,16 @@ export function Header() {
           <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
             Absurdania
           </Link>
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors"
-              >
-                {link.label}
-              </Link>
+              <Button key={link.href} variant="ghost" asChild>
+                <Link
+                  href={link.href}
+                  className="text-gray-300 hover:bg-white/10 hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              </Button>
             ))}
           </nav>
           <div className="md:hidden">
@@ -63,7 +64,7 @@ export function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="text-lg text-gray-300 hover:text-white transition-colors"
+                      className="text-lg text-gray-300 hover:text-white transition-colors p-2 rounded-md hover:bg-white/10"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
