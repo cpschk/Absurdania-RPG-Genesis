@@ -64,7 +64,7 @@ export function Header() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="text-lg text-gray-300 hover:text-white transition-colors p-2 rounded-md hover:bg-white/10"
+                      className="text-lg text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 p-2 rounded-md hover:bg-white/10"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {link.label}
