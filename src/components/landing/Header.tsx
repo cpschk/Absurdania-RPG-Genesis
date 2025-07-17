@@ -29,12 +29,12 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-gray-900/80 backdrop-blur-md shadow-lg" : "bg-transparent"
+        "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-6xl",
+        "bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl"
       )}
     >
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
             Absurdania
           </Link>
