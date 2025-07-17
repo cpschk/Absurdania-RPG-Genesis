@@ -12,7 +12,7 @@ export function TierCard({ price, reward }: TierCardProps) {
       <Card className="bg-gray-900 h-full text-center border-none">
         <CardHeader>
           <CardTitle className={`text-4xl font-black bg-gradient-to-br ${isHighTier ? 'from-yellow-400 to-orange-500' : 'from-purple-500 to-pink-600'} text-transparent bg-clip-text`}>
-            ${price}
+            ${price} USD
           </CardTitle>
         </CardHeader>
         <CardContent>
