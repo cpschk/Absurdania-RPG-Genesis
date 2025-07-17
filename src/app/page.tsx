@@ -46,12 +46,14 @@ export default function Home() {
 
         <section id="about" className="py-20 sm:py-32 bg-gray-900">
           <div className="container mx-auto max-w-4xl px-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-              ¿Qué es Absurdania?
-            </h2>
-            <p className="text-lg text-gray-300 text-center leading-relaxed">
-              Absurdania RPG es una experiencia narrativa absurda impulsada por IA. Despiertas con un nabo en la frente. Tus decisiones alteran una historia viva y caótica. Cada escena es única. Cada enemigo tiene lógica absurda. Todo lo que haces queda registrado en el lore eterno del caos.
-            </p>
+            <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
+              <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
+                ¿Qué es Absurdania?
+              </h2>
+              <p className="text-lg text-gray-300 text-center leading-relaxed">
+                Absurdania RPG es una experiencia narrativa absurda impulsada por IA. Despiertas con un nabo en la frente. Tus decisiones alteran una historia viva y caótica. Cada escena es única. Cada enemigo tiene lógica absurda. Todo lo que haces queda registrado en el lore eterno del caos.
+              </p>
+            </div>
           </div>
         </section>
 
