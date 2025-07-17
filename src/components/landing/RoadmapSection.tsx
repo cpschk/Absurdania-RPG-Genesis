@@ -13,7 +13,7 @@ function RoadmapItem({ version, title, features, gradient }: RoadmapItemProps) {
           {version} – {title}
         </h3>
       </div>
-      <div className="p-6 rounded-xl border border-purple-500/30 bg-gray-900/50 mt-[50px]">
+      <div className="p-6 rounded-xl border border-purple-500/30 bg-gray-900/50 mt-5">
         <ul className="space-y-3 text-gray-300 list-disc list-inside pl-2">
             {features.map((feature, i) => <li key={i}>{feature}</li>)}
         </ul>
