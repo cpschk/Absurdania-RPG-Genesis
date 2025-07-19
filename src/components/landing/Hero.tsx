@@ -9,7 +9,7 @@ export function Hero() {
       </div>
       <div className="relative z-10 px-4">
         <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
-          <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse">
+          <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
             Absurdania
           </span> <span className="animate-heartbeat inline-block">RPG</span>
         </h1>

@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"Space Grotesk"', 'sans-serif'],
-        headline: ['"Space Grotesk"', 'sans-serif'],
+        body: ['"Comic Neue"', 'cursive'],
+        headline: ['"Luckiest Guy"', 'cursive'],
         code: ['monospace'],
       },
       colors: {
