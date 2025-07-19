@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Collapsible,
@@ -11,14 +10,15 @@ import {
 type TierCardProps = {
   price: number;
   reward: string;
+  isOpen: boolean;
+  onToggle: () => void;
 };
 
-export function TierCard({ price, reward }: TierCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export function TierCard({ price, reward, isOpen, onToggle }: TierCardProps) {
   const isHighTier = price >= 250;
 
   return (
-    <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+    <Collapsible open={isOpen} onOpenChange={onToggle}>
       <div className={`p-1 rounded-lg bg-gradient-to-br ${isHighTier ? 'from-yellow-400 to-orange-500' : 'from-purple-500 to-pink-600'} transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}>
         <CollapsibleTrigger className="w-full">
           <Card className="bg-gray-900 h-full text-center border-none rounded-b-none">
