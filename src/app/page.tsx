@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
 import { FeatureCarousel } from '@/components/landing/FeatureCarousel';
@@ -97,7 +98,7 @@ export default function Home() {
               Tienes dos caminos: ignorar esta locura, o ser parte de ella. ¡Haz historia absurda con nosotros!
             </p>
             <CTAButton>
-              Conviértete en Fundador
+              Conviértete en co-Fundador
             </CTAButton>
           </div>
         </section>
