@@ -29,7 +29,7 @@ const characters = [
   {
     icon: '⏰',
     name: 'Despertador Existencial',
-    imageUrl: 'https://placehold.co/100x100.png',
+    imageUrl: '/despertador-existencial.png',
     'data-ai-hint': 'alarm clock illustration',
     phrase: '¡Levántate a cuestionar tu propósito!',
     description: 'Un despertador filosófico que no solo suena, sino que hace preguntas incómodas sobre la vida.',
