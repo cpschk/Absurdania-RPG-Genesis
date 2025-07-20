@@ -35,10 +35,11 @@ export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint
               {imageUrl ? (
                 <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-purple-500/50">
                   <Image
-                    src={imageUrl}
+                    src={`https://placehold.co/100x100.png`}
                     alt={name}
-                    fill
-                    style={{ objectFit: 'cover' }}
+                    width={100}
+                    height={100}
+                    className="object-cover"
                     data-ai-hint={dataAiHint}
                   />
                 </div>
