@@ -23,7 +23,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900">
+    <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
       <Header />
       <main className="flex-grow">
         <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
