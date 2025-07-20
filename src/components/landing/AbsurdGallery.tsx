@@ -7,9 +7,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const characters = [
-  { icon: '🧠', name: 'Filósofo de Microondas' },
-  { icon: '🤡', name: 'Payaso de Guerra' },
-  { icon: '🧛', name: 'Vampiro de Redes Sociales' },
+  { icon: '🧠', name: 'Filósofo de Microondas', type: 'NPC' },
+  { icon: '🤡', name: 'Payaso de Guerra', type: 'NPC' },
+  { icon: '🧛', name: 'Vampiro de Redes Sociales', type: 'NPC' },
   {
     name: 'Despertador Existencial',
     imageUrl: '/despertador-existencial.png',
@@ -17,6 +17,7 @@ const characters = [
     phrase: '¡Levántate a cuestionar tu propósito!',
     description: 'Un despertador filosófico que no solo suena, sino que hace preguntas incómodas sobre la vida.',
     attacks: ['Zumbido de Realidad', 'Repetición Infinita'],
+    type: 'Enemigo',
   },
   {
     name: 'Espada de Fideos',
@@ -24,7 +25,8 @@ const characters = [
     'data-ai-hint': 'noodle sword',
     phrase: '¡Al dente!',
     description: "Un arma hecha de tallarines que se endurecen al gritar '¡al dente!'.",
-    attacks: ["Golpe Rigatoni", "Estocada de Espagueti"]
+    attacks: ["Golpe Rigatoni", "Estocada de Espagueti"],
+    type: 'Objeto',
   },
   {
     name: 'Buzon Cobrador',
@@ -32,7 +34,8 @@ const characters = [
     'data-ai-hint': 'mailbox monster',
     phrase: "¡Paga tus cartas!",
     description: "Un buzón hostil que guarda deudas emocionales y facturas vencidas.",
-    attacks: ["Factura Letal", "Interés Compuesto"]
+    attacks: ["Factura Letal", "Interés Compuesto"],
+    type: 'Enemigo',
   }
 ];
 
