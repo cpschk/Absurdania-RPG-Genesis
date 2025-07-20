@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, TouchEvent as ReactTouchEvent, MouseEvent } from 'react';
 import { CharacterCard } from './CharacterCard';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -39,6 +39,7 @@ const characters = [
 export function AbsurdGallery() {
   const [rotation, setRotation] = useState(0);
   const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   const angle = 360 / characters.length;
   const tz = Math.round( ( 220 / 2 ) / Math.tan( Math.PI / characters.length ) );
@@ -56,10 +57,40 @@ export function AbsurdGallery() {
   const handleCardFlip = (index: number) => {
     setFlippedCardIndex(prevIndex => (prevIndex === index ? null : index));
   };
+
+  const handleTouchStart = (e: ReactTouchEvent<HTMLDivElement>) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: ReactTouchEvent<HTMLDivElement>) => {
+    if (touchStartX === null) return;
+    e.preventDefault(); 
+  };
+
+  const handleTouchEnd = (e: ReactTouchEvent<HTMLDivElement>) => {
+    if (touchStartX === null) return;
+    
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+
+    if (Math.abs(deltaX) > 50) { // Swipe threshold
+      if (deltaX > 0) {
+        handlePrev();
+      } else {
+        handleNext();
+      }
+    }
+    setTouchStartX(null);
+  };
   
   return (
     <div className="flex flex-col items-center space-y-8">
-      <div className="carousel-container h-[320px] w-full">
+      <div 
+        className="carousel-container h-[320px] w-full"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="carousel" style={{ transform: `rotateY(${rotation}deg)` }}>
           {characters.map((char, index) => (
             <div
