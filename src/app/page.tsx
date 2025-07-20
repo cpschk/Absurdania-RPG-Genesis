@@ -27,7 +27,6 @@ const characters = [
   { icon: '🤡', name: 'Payaso de Guerra' },
   { icon: '🧛', name: 'Vampiro de Redes Sociales' },
   {
-    icon: '⏰',
     name: 'Despertador Existencial',
     imageUrl: '/despertador-existencial.png',
     'data-ai-hint': 'alarm clock illustration',
@@ -45,7 +44,7 @@ const characters = [
   },
   {
     name: 'Buzon Cobrador',
-    imageUrl: '/Buzon cobrador.png',
+    imageUrl: '/buzon-cobrador.png',
     'data-ai-hint': 'mailbox monster',
     phrase: "¡Paga tus cartas!",
     description: "Un buzón hostil que guarda deudas emocionales y facturas vencidas.",
