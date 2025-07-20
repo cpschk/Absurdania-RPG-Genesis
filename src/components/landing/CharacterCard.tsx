@@ -43,16 +43,14 @@ export function CharacterCard({
           <Card className="bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
             <CardHeader>
               {imageUrl ? (
-                <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-purple-500/50">
-                  <Image
-                    src={imageUrl}
-                    alt={name}
-                    width={100}
-                    height={100}
-                    className="object-cover"
-                    data-ai-hint={dataAiHint}
-                  />
-                </div>
+                <Image
+                  src={imageUrl}
+                  alt={name}
+                  width={100}
+                  height={100}
+                  className="object-contain mx-auto mb-4 scale-105 h-24 w-24"
+                  data-ai-hint={dataAiHint}
+                />
               ) : (
                 <div className="text-6xl mx-auto mb-4">{icon}</div>
               )}
