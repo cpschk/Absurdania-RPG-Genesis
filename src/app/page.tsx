@@ -1,13 +1,12 @@
 
 'use client';
 
-import { useState } from 'react';
 import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
 import { FeatureCarousel } from '@/components/landing/FeatureCarousel';
 import { RoadmapSection } from '@/components/landing/RoadmapSection';
 import { TierSection } from '@/components/landing/TierSection';
-import { CharacterCard } from '@/components/landing/CharacterCard';
+import { AbsurdGallery } from '@/components/landing/AbsurdGallery';
 import { CTAButton } from '@/components/landing/CTAButton';
 import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
@@ -22,44 +21,7 @@ const features = [
   { icon: '🧪', title: 'Testers activos ya jugando' },
 ];
 
-const characters = [
-  { icon: '🧠', name: 'Filósofo de Microondas' },
-  { icon: '🤡', name: 'Payaso de Guerra' },
-  { icon: '🧛', name: 'Vampiro de Redes Sociales' },
-  {
-    name: 'Despertador Existencial',
-    imageUrl: '/despertador-existencial.png',
-    'data-ai-hint': 'alarm clock illustration',
-    phrase: '¡Levántate a cuestionar tu propósito!',
-    description: 'Un despertador filosófico que no solo suena, sino que hace preguntas incómodas sobre la vida.',
-    attacks: ['Zumbido de Realidad', 'Repetición Infinita'],
-  },
-  {
-    name: 'Espada de Fideos',
-    imageUrl: '/espada-fideos.png',
-    'data-ai-hint': 'noodle sword',
-    phrase: '¡Al dente!',
-    description: "Un arma hecha de tallarines que se endurecen al gritar '¡al dente!'.",
-    attacks: ["Golpe Rigatoni", "Estocada de Espagueti"]
-  },
-  {
-    name: 'Buzon Cobrador',
-    imageUrl: '/buzon-cobrador.png',
-    'data-ai-hint': 'mailbox monster',
-    phrase: "¡Paga tus cartas!",
-    description: "Un buzón hostil que guarda deudas emocionales y facturas vencidas.",
-    attacks: ["Factura Letal", "Interés Compuesto"]
-  }
-];
-
-
 export default function Home() {
-  const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
-
-  const handleCardFlip = (index: number) => {
-    setFlippedCardIndex(prevIndex => (prevIndex === index ? null : index));
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-gray-900">
       <Header />
@@ -132,20 +94,11 @@ export default function Home() {
         <TierSection />
 
         <section id="gallery" className="py-20 sm:py-32 bg-gray-800">
-          <div className="container mx-auto max-w-4xl px-4">
+          <div className="container mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
               Galería Absurda
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
-              {characters.map((char, index) => (
-                <CharacterCard 
-                  key={index}
-                  {...char}
-                  isFlipped={flippedCardIndex === index}
-                  onFlip={() => handleCardFlip(index)}
-                />
-              ))}
-            </div>
+            <AbsurdGallery />
           </div>
         </section>
 
