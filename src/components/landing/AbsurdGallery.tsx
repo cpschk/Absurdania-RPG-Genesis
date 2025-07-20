@@ -83,6 +83,10 @@ export function AbsurdGallery() {
     setTouchStartX(null);
   };
   
+  const totalCards = characters.length;
+  const currentCardIndex = (Math.round(-rotation / angle) % totalCards + totalCards) % totalCards;
+
+
   return (
     <div className="flex flex-col items-center space-y-8">
       <div 
@@ -92,21 +96,27 @@ export function AbsurdGallery() {
         onTouchEnd={handleTouchEnd}
       >
         <div className="carousel" style={{ transform: `rotateY(${rotation}deg)` }}>
-          {characters.map((char, index) => (
-            <div
-              key={index}
-              className="carousel-card"
-              style={{
-                transform: `rotateY(${index * angle}deg) translateZ(${tz}px)`,
-              }}
-            >
-              <CharacterCard
-                {...char}
-                isFlipped={flippedCardIndex === index}
-                onFlip={() => handleCardFlip(index)}
-              />
-            </div>
-          ))}
+          {characters.map((char, index) => {
+            const isMainCard = index === currentCardIndex;
+            const scale = isMainCard ? 1 : 0.8;
+            const cardTransform = `rotateY(${index * angle}deg) translateZ(${tz}px) scale(${scale})`;
+            
+            return (
+              <div
+                key={index}
+                className="carousel-card"
+                style={{
+                  transform: cardTransform,
+                }}
+              >
+                <CharacterCard
+                  {...char}
+                  isFlipped={flippedCardIndex === index}
+                  onFlip={() => handleCardFlip(index)}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="flex space-x-4">
