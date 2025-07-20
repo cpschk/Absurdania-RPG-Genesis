@@ -3,6 +3,7 @@
 
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 type CharacterCardProps = {
@@ -15,6 +16,7 @@ type CharacterCardProps = {
   phrase?: string;
   description?: string;
   attacks?: string[];
+  type?: string;
 };
 
 export function CharacterCard({ 
@@ -26,8 +28,24 @@ export function CharacterCard({
   onFlip,
   phrase,
   description,
-  attacks
+  attacks,
+  type
 }: CharacterCardProps) {
+  
+  const getBadgeVariant = (type?: string) => {
+    switch (type) {
+      case 'Enemigo':
+        return 'destructive';
+      case 'Objeto':
+        return 'secondary';
+      case 'NPC':
+        return 'default';
+      default:
+        return 'outline';
+    }
+  };
+
+  const isScaledCharacter = name === 'Despertador Existencial' || name === 'Espada de Fideos' || name === 'Buzon Cobrador';
 
   return (
     <div className="perspective w-full h-full" onClick={onFlip}>
@@ -41,14 +59,19 @@ export function CharacterCard({
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
           <Card className="bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
-            <CardHeader>
+            <CardHeader className="pt-4">
+              {type && (
+                <Badge variant={getBadgeVariant(type)} className="mx-auto mb-2 w-fit">
+                  {type}
+                </Badge>
+              )}
               {imageUrl ? (
                 <Image
                   src={imageUrl}
                   alt={name}
                   width={100}
                   height={100}
-                  className="object-contain mx-auto mb-4 scale-125 h-24 w-24"
+                  className={cn("object-contain mx-auto mb-2 h-24 w-24", isScaledCharacter && "scale-125")}
                   data-ai-hint={dataAiHint}
                 />
               ) : (
