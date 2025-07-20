@@ -42,6 +42,14 @@ const characters = [
     phrase: '¡Al dente!',
     description: "Un arma hecha de tallarines que se endurecen al gritar '¡al dente!'.",
     attacks: ["Golpe Rigatoni", "Estocada de Espagueti"]
+  },
+  {
+    name: 'Buzon Cobrador',
+    imageUrl: '/Buzon cobrador.png',
+    'data-ai-hint': 'mailbox monster',
+    phrase: "¡Paga tus cartas!",
+    description: "Un buzón hostil que guarda deudas emocionales y facturas vencidas.",
+    attacks: ["Factura Letal", "Interés Compuesto"]
   }
 ];
 
