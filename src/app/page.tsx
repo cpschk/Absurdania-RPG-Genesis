@@ -35,6 +35,14 @@ const characters = [
     description: 'Un despertador filosófico que no solo suena, sino que hace preguntas incómodas sobre la vida.',
     attacks: ['Zumbido de Realidad', 'Repetición Infinita'],
   },
+  {
+    name: 'Espada de Fideos',
+    imageUrl: '/espada-fideos.png',
+    'data-ai-hint': 'noodle sword',
+    phrase: '¡Al dente!',
+    description: "Un arma hecha de tallarines que se endurecen al gritar '¡al dente!'.",
+    attacks: ["Golpe Rigatoni", "Estocada de Espagueti"]
+  }
 ];
 
 
