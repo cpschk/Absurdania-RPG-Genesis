@@ -58,13 +58,16 @@ export function CharacterCard({
       >
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
-          <Card className="bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
+          <Card className="relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
+            {type && (
+              <Badge 
+                variant={getBadgeVariant(type)} 
+                className="absolute top-3 left-1/2 -translate-x-1/2 z-10 px-3 py-1 text-sm"
+              >
+                {type}
+              </Badge>
+            )}
             <CardHeader className="pt-4">
-              {type && (
-                <Badge variant={getBadgeVariant(type)} className="mx-auto mb-2 w-fit">
-                  {type}
-                </Badge>
-              )}
               {imageUrl ? (
                 <Image
                   src={imageUrl}
@@ -77,7 +80,7 @@ export function CharacterCard({
               ) : (
                 <div className="text-6xl mx-auto mb-4">{icon}</div>
               )}
-              <CardTitle className="text-lg font-bold text-white">{name}</CardTitle>
+              <CardTitle className="text-lg font-bold text-white pt-6">{name}</CardTitle>
             </CardHeader>
           </Card>
         </div>
