@@ -1,10 +1,12 @@
 
+'use client';
+
 import { Header } from '@/components/landing/Header';
 import { Hero } from '@/components/landing/Hero';
 import { FeatureCarousel } from '@/components/landing/FeatureCarousel';
 import { RoadmapSection } from '@/components/landing/RoadmapSection';
 import { TierSection } from '@/components/landing/TierSection';
-import { CharacterCard } from '@/components/landing/CharacterCard';
+import { AbsurdGallery } from '@/components/landing/AbsurdGallery';
 import { CTAButton } from '@/components/landing/CTAButton';
 import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
@@ -19,20 +21,35 @@ const features = [
   { icon: '🧪', title: 'Testers activos ya jugando' },
 ];
 
-const characters = [
-  { icon: '🧠', name: 'Filósofo de Microondas' },
-  { icon: '🤡', name: 'Payaso de Guerra' },
-  { icon: '🧛', name: 'Vampiro de Redes Sociales' },
-  { icon: '🔮', name: 'Oráculo de Lo Ridículo' },
-];
-
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-900">
       <Header />
       <main className="flex-grow">
-        <Hero />
+        <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
+            <div className="absolute inset-0 z-10 bg-black">
+                <div className="relative z-20 px-4 h-full flex flex-col items-center justify-center bg-black mix-blend-screen">
+                    <div className="p-8">
+                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
+                            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
+                                Absurdania
+                            </span>{' '}
+                            <span className="animate-heartbeat inline-block">RPG</span>
+                        </h1>
+                        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                            El juego donde el caos piensa y el absurdo tiene reglas
+                        </p>
+                        <CTAButton>
+                            <span className="flex flex-col items-center">
+                                <span>¡Únete al caos creativo!</span>
+                                <span className="text-sm font-normal opacity-80">En Discord... por ahora!</span>
+                            </span>
+                        </CTAButton>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section id="about" className="py-20 sm:py-32 bg-gray-900">
           <div className="container mx-auto max-w-4xl px-4">
@@ -77,15 +94,11 @@ export default function Home() {
         <TierSection />
 
         <section id="gallery" className="py-20 sm:py-32 bg-gray-800">
-          <div className="container mx-auto max-w-4xl px-4">
+          <div className="container mx-auto px-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
               Galería Absurda
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
-              {characters.map((char, index) => (
-                <CharacterCard key={index} icon={char.icon} name={char.name} />
-              ))}
-            </div>
+            <AbsurdGallery />
           </div>
         </section>
 
