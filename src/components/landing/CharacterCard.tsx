@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -11,9 +12,22 @@ type CharacterCardProps = {
   "data-ai-hint"?: string;
   isFlipped: boolean;
   onFlip: () => void;
+  phrase?: string;
+  description?: string;
+  attacks?: string[];
 };
 
-export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint, isFlipped, onFlip }: CharacterCardProps) {
+export function CharacterCard({ 
+  icon, 
+  name, 
+  imageUrl, 
+  "data-ai-hint": dataAiHint, 
+  isFlipped, 
+  onFlip,
+  phrase,
+  description,
+  attacks
+}: CharacterCardProps) {
 
   return (
     <div className="perspective w-full h-full" onClick={onFlip}>
@@ -50,10 +64,23 @@ export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
           <Card className="bg-gray-900/50 border-purple-500/20 w-full h-full flex flex-col justify-center items-center">
-             <CardContent className="text-center text-gray-300 p-6">
-               <p className="text-sm">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
-               </p>
+             <CardContent className="text-center text-gray-300 p-4 space-y-2">
+               {phrase && description && attacks ? (
+                 <>
+                   <p className="text-sm italic">"{phrase}"</p>
+                   <p className="text-xs">{description}</p>
+                   <div>
+                     <h4 className="font-bold text-sm mt-2 mb-1">Ataques:</h4>
+                     <ul className="text-xs list-none p-0">
+                       {attacks.map((attack, i) => <li key={i}>{attack}</li>)}
+                     </ul>
+                   </div>
+                 </>
+               ) : (
+                 <p className="text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+                 </p>
+               )}
              </CardContent>
           </Card>
         </div>

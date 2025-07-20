@@ -31,6 +31,9 @@ const characters = [
     name: 'Despertador Existencial',
     imageUrl: 'https://placehold.co/100x100.png',
     'data-ai-hint': 'alarm clock illustration',
+    phrase: '¡Levántate a cuestionar tu propósito!',
+    description: 'Un despertador filosófico que no solo suena, sino que hace preguntas incómodas sobre la vida.',
+    attacks: ['Zumbido de Realidad', 'Repetición Infinita'],
   },
 ];
 
@@ -121,11 +124,8 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8">
               {characters.map((char, index) => (
                 <CharacterCard 
-                  key={index} 
-                  icon={char.icon} 
-                  name={char.name}
-                  imageUrl={char.imageUrl}
-                  data-ai-hint={char['data-ai-hint']}
+                  key={index}
+                  {...char}
                   isFlipped={flippedCardIndex === index}
                   onFlip={() => handleCardFlip(index)}
                 />
