@@ -62,7 +62,7 @@ export function CharacterCard({
             {type && (
               <Badge 
                 variant={getBadgeVariant(type)} 
-                className="absolute top-3 left-1/2 -translate-x-1/2 z-10 px-3 py-1 text-sm"
+                className="absolute top-1 left-1/2 -translate-x-1/2 z-10 px-3 py-1 text-sm"
               >
                 {type}
               </Badge>
