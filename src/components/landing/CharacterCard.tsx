@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -10,17 +9,14 @@ type CharacterCardProps = {
   name: string;
   imageUrl?: string;
   "data-ai-hint"?: string;
+  isFlipped: boolean;
+  onFlip: () => void;
 };
 
-export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint }: CharacterCardProps) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
+export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint, isFlipped, onFlip }: CharacterCardProps) {
 
   return (
-    <div className="perspective w-full h-full" onClick={handleFlip}>
+    <div className="perspective w-full h-full" onClick={onFlip}>
       <div
         className={cn(
           "relative w-full h-full preserve-3d transition-transform duration-700 cursor-pointer",
@@ -35,7 +31,7 @@ export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint
               {imageUrl ? (
                 <div className="relative w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-2 border-purple-500/50">
                   <Image
-                    src={`https://placehold.co/100x100.png`}
+                    src={imageUrl}
                     alt={name}
                     width={100}
                     height={100}
