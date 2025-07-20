@@ -48,7 +48,7 @@ export function CharacterCard({
                   alt={name}
                   width={100}
                   height={100}
-                  className="object-contain mx-auto mb-4 scale-105 h-24 w-24"
+                  className="object-contain mx-auto mb-4 scale-125 h-24 w-24"
                   data-ai-hint={dataAiHint}
                 />
               ) : (
