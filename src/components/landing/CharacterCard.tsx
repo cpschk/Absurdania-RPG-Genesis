@@ -53,9 +53,9 @@ export function CharacterCard({ icon, name, imageUrl, "data-ai-hint": dataAiHint
 
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
-          <Card className="bg-[#fdf3d9] border-[#c8bda4] text-gray-800 w-full h-full flex flex-col justify-center p-4">
-             <CardContent className="text-center pt-6">
-               <p className="text-sm italic font-serif">
+          <Card className="bg-gray-900/50 border-purple-500/20 w-full h-full flex flex-col justify-center p-4">
+             <CardContent className="text-center pt-6 text-gray-300">
+               <p className="text-sm">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam.
                </p>
              </CardContent>
