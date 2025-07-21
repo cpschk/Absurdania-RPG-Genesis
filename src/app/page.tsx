@@ -159,7 +159,7 @@ export default function Home() {
               alt="Background for Absurd Gallery section"
               layout="fill"
               objectFit="cover"
-              className="opacity-75"
+              className="opacity-100"
             />
             <div className="absolute inset-0 bg-gray-800/90"></div>
           </div>
