@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,11 +11,12 @@ import {
 type TierCardProps = {
   price: number;
   reward: string;
+  description: string;
   isOpen: boolean;
   onToggle: () => void;
 };
 
-export function TierCard({ price, reward, isOpen, onToggle }: TierCardProps) {
+export function TierCard({ price, reward, description, isOpen, onToggle }: TierCardProps) {
   const isHighTier = price >= 250;
 
   return (
@@ -34,9 +36,9 @@ export function TierCard({ price, reward, isOpen, onToggle }: TierCardProps) {
         </CollapsibleTrigger>
       </div>
       <CollapsibleContent>
-        <div className="bg-[#fdf3d9] text-gray-800 p-4 -mt-1 shadow-inner border-t-2 border-yellow-700/50 rounded-b-lg">
+        <div className="bg-gray-800 text-gray-300 p-4 -mt-1 shadow-inner border-t-2 border-purple-800/50 rounded-b-lg">
           <p className="text-sm italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+            {description}
           </p>
         </div>
       </CollapsibleContent>
