@@ -28,33 +28,33 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
-            <div className="absolute inset-0 z-10 bg-black">
-                <Image
+            <div className="absolute inset-0 z-0">
+                 <Image
                   src="/background/background_illustration_hero.png"
                   alt="Absurdania RPG Hero Background"
                   layout="fill"
                   objectFit="cover"
-                  className="opacity-50"
+                  className="opacity-40"
                 />
-                <div className="relative z-20 px-4 h-full flex flex-col items-center justify-center bg-black mix-blend-screen">
-                    <div className="p-8">
-                        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
-                            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
-                                Absurdania
-                            </span>{' '}
-                            <span className="animate-heartbeat inline-block">RPG</span>
-                        </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-                            El juego donde el caos piensa y el absurdo tiene reglas
-                        </p>
-                        <CTAButton>
-                            <span className="flex flex-col items-center">
-                                <span>¡Únete al caos creativo!</span>
-                                <span className="text-sm font-normal opacity-80">En Discord... por ahora!</span>
-                            </span>
-                        </CTAButton>
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
+            </div>
+            <div className="relative z-10 px-4">
+                <div className="p-8">
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
+                        <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
+                            Absurdania
+                        </span>{' '}
+                        <span className="animate-heartbeat inline-block">RPG</span>
+                    </h1>
+                    <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                        El juego donde el caos piensa y el absurdo tiene reglas
+                    </p>
+                    <CTAButton>
+                        <span className="flex flex-col items-center">
+                            <span>¡Únete al caos creativo!</span>
+                            <span className="text-sm font-normal opacity-80">En Discord... por ahora!</span>
+                        </span>
+                    </CTAButton>
                 </div>
             </div>
         </div>
@@ -208,5 +208,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
