@@ -24,7 +24,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-gray-900">
       <Header />
       <main className="flex-grow">
         <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
@@ -155,12 +155,11 @@ export default function Home() {
         <div className="relative">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://placehold.co/1920x1080.png"
-              alt="Background for Gallery section"
+              src="/background/background_illustration_absurd_gallery.png"
+              alt="Background for Absurd Gallery section"
               layout="fill"
               objectFit="cover"
               className="opacity-20"
-              data-ai-hint="character art"
             />
             <div className="absolute inset-0 bg-gray-800/90"></div>
           </div>
