@@ -6,14 +6,14 @@ import { TierCard } from './TierCard';
 import { useInView } from '@/hooks/use-in-view';
 
 const tiers = [
-  { price: 5, reward: 'Nombre en el mural del caos' },
-  { price: 15, reward: 'NPC con tu frase absurda' },
-  { price: 30, reward: 'Enemigo IA generado' },
-  { price: 50, reward: 'Mini-jefe con historia' },
-  { price: 100, reward: 'Misión secundaria personalizada' },
-  { price: 250, reward: 'Jefe con voz, historia y sprite' },
-  { price: 500, reward: 'Personaje jugable + NFT opcional' },
-  { price: 1000, reward: 'Culto, zona o final secreto. Eres co-creador.' },
+  { price: 5, reward: 'Nombre en el mural del caos', description: 'Tu nombre quedará inmortalizado en una sección especial de los créditos como uno de los primeros creyentes en esta locura.' },
+  { price: 15, reward: 'NPC con tu frase absurda', description: 'Diseñaremos un personaje no jugable (NPC) que dirá una frase memorable de tu elección cada vez que un jugador interactúe con él.' },
+  { price: 30, reward: 'Enemigo IA generado', description: 'Colabora con nosotros para crear un enemigo único. Tú nos das la idea, y nuestra IA le dará vida con comportamientos y diálogos absurdos.' },
+  { price: 50, reward: 'Mini-jefe con historia', description: 'Conviértete en un mini-jefe. Trabajaremos contigo para crear su historia, motivaciones y ataques especiales. ¡Serás un desafío memorable!' },
+  { price: 100, reward: 'Misión secundaria personalizada', description: 'Diseña una misión secundaria completa. Tú propones el objetivo, los personajes involucrados y la recompensa. Tu creatividad será parte del juego.' },
+  { price: 250, reward: 'Jefe con voz, historia y sprite', description: 'Aparece como un jefe principal. Crearemos un sprite (personaje visual) basado en ti, grabaremos tu voz para sus diálogos y serás una pieza clave de la trama.' },
+  { price: 500, reward: 'Personaje jugable + NFT opcional', description: 'Conviértete en un personaje jugable desbloqueable. Además, te ofrecemos la opción de acuñar tu personaje como un NFT único como prueba de co-creación.' },
+  { price: 1000, reward: 'Culto, zona o final secreto. Eres co-creador.', description: 'Tu influencia será legendaria. Diseña una facción entera, una zona secreta en el mapa o incluso un final alternativo para el juego. Eres un co-creador oficial.' },
 ];
 
 export function TierSection() {
@@ -44,6 +44,7 @@ export function TierSection() {
                 key={index}
                 price={tier.price}
                 reward={tier.reward}
+                description={tier.description}
                 isOpen={openTierIndex === index}
                 onToggle={() => handleToggle(index)}
               />
