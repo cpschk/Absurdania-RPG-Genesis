@@ -43,7 +43,7 @@ export default function Home() {
                 <div className="p-8">
                     <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
                         <GlitchText
-                            speed={0.5}
+                            speed={1}
                             enableShadows={true}
                             enableOnHover={false}
                             className="inline-block"
