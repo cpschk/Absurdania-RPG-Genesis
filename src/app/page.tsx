@@ -152,7 +152,7 @@ export default function Home() {
 
         <TierSection />
 
-        <div className="relative">
+        <div className="relative overflow-x-hidden">
           <div className="absolute inset-0 z-0">
             <Image
               src="/background/background_illustration_absurd_gallery.png"
