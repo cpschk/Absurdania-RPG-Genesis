@@ -95,12 +95,14 @@
   .rotate-y-180 {
     transform: rotateY(180deg);
   }
+
+  /* Desktop styles (wide) */
   .carousel-container {
-      perspective: 2000px; /* Wider perspective for mobile */
+      perspective: 2000px;
   }
   .carousel {
       position: relative;
-      width: 100%;
+      width: 300px; /* Wider carousel for desktop */
       height: 300px;
       margin: 0 auto;
       transform-style: preserve-3d;
@@ -116,7 +118,8 @@
       transition: transform 1s, opacity 1s;
   }
 
-  @media (min-width: 768px) {
+  /* Mobile styles (compact 3D) */
+  @media (max-width: 767px) {
     .carousel-container {
       perspective: 1000px;
     }

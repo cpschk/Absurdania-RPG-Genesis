@@ -45,10 +45,10 @@ export function AbsurdGallery() {
   const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const isMobile = useIsMobile();
-  const [carouselWidth, setCarouselWidth] = useState(220);
+  const [carouselWidth, setCarouselWidth] = useState(300);
 
   useEffect(() => {
-    setCarouselWidth(isMobile ? 300 : 220);
+    setCarouselWidth(isMobile ? 220 : 300);
   }, [isMobile]);
 
   const angle = 360 / characters.length;
