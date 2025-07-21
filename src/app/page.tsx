@@ -42,9 +42,9 @@ export default function Home() {
                  <Image
                   src="/background/background_illustration_hero.png"
                   alt="Absurdania RPG Hero Background"
-                  layout="fill"
-                  objectFit="cover"
+                  fill={true}                  
                   className="opacity-40"
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
             </div>
@@ -81,8 +81,7 @@ export default function Home() {
             <Image
               src="https://placehold.co/1920x1080.png"
               alt="Background for About section"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="opacity-20"
               data-ai-hint="abstract background"
             />
@@ -107,8 +106,7 @@ export default function Home() {
             <Image
               src="/background/background_illustration_features.png"
               alt="Background for Why section"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="opacity-80"
               data-ai-hint="glowing runes"
             />
@@ -135,10 +133,9 @@ export default function Home() {
             <Image
               src="https://placehold.co/1920x1080.png"
               alt="Background for Features section"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="opacity-20"
-               data-ai-hint="game elements"
+              data-ai-hint="game elements"
             />
             <div className="absolute inset-0 bg-gray-900/70"></div>
           </div>
@@ -154,15 +151,13 @@ export default function Home() {
             <Image
               src="/background/background_illustration_roadmap.png"
               alt="Absurdania RPG Roadmap Background"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="hidden sm:block opacity-95"
             />
              <Image
               src="/background/movil_background_illustration_roadmap.png"
               alt="Absurdania RPG Roadmap Background for mobile"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="block sm:hidden opacity-95"
             />
             <div className="absolute inset-0 bg-gray-800/70"></div>
@@ -181,8 +176,7 @@ export default function Home() {
             <Image
               src="/background/background_illustration_absurd_gallery.png"
               alt="Background for Absurd Gallery section"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="opacity-100"
             />
             <div className="absolute inset-0 bg-gray-800/70"></div>
@@ -203,8 +197,7 @@ export default function Home() {
              <Image
               src="https://placehold.co/1920x1080.png"
               alt="Background for CTA section"
-              layout="fill"
-              objectFit="cover"
+              fill={true}              
               className="opacity-20"
               data-ai-hint="dramatic landscape"
             />

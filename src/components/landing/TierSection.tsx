@@ -38,9 +38,8 @@ export function TierSection() {
         <Image
             src="https://placehold.co/1920x1080.png"
             alt="Background for Tiers section"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
+            fill={true}
+            className="opacity-20 object-cover"
             data-ai-hint="treasure chest"
         />
         <div className="absolute inset-0 bg-gray-900/80"></div>
