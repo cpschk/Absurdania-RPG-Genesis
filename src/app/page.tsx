@@ -24,7 +24,7 @@ const features = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
+    <div className="flex flex-col min-h-screen bg-gray-900">
       <Header />
       <main className="flex-grow">
         <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
@@ -135,14 +135,13 @@ export default function Home() {
         <div className="relative">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://placehold.co/1920x1080.png"
-              alt="Background for Roadmap section"
+              src="/background/background_illustration_roadmap.png"
+              alt="Absurdania RPG Roadmap Background"
               layout="fill"
               objectFit="cover"
-              className="opacity-20"
-              data-ai-hint="fantasy map"
+              className="opacity-75"
             />
-            <div className="absolute inset-0 bg-gray-800/90"></div>
+            <div className="absolute inset-0 bg-gray-800/80"></div>
           </div>
           <section id="roadmap" className="relative z-10 py-20 sm:py-32">
              <div className="container mx-auto max-w-2xl px-4">
