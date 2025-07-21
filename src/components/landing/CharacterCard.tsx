@@ -60,7 +60,7 @@ export function CharacterCard({
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
           <Card className={cn(
-              "relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:-translate-y-2 w-full h-full flex flex-col justify-center",
+              "relative bg-gray-900/70 border-purple-500/20 text-center transition-all duration-300 hover:-translate-y-2 w-full h-full flex flex-col justify-center",
               isMainCard && "border-purple-500 shadow-2xl shadow-purple-500/20"
             )}>
             {type && (
@@ -96,8 +96,8 @@ export function CharacterCard({
 
         {/* Back Face */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
-          <Card className="bg-gray-900/50 border-purple-500/20 w-full h-full flex flex-col justify-center items-center">
-             <CardContent className="text-center text-gray-300 p-4 space-y-2">
+          <Card className="bg-gray-900/70 border-purple-500/20 w-full h-full flex flex-col justify-center items-center">
+             <CardContent className="text-center text-white p-4 space-y-2">
                {phrase && description && attacks ? (
                  <>
                    <p className="text-sm italic">"{phrase}"</p>

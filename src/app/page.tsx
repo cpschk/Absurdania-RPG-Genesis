@@ -139,16 +139,16 @@ export default function Home() {
               alt="Absurdania RPG Roadmap Background"
               layout="fill"
               objectFit="cover"
-              className="hidden sm:block opacity-75"
+              className="hidden sm:block opacity-95"
             />
              <Image
               src="/background/movil_background_illustration_roadmap.png"
               alt="Absurdania RPG Roadmap Background for mobile"
               layout="fill"
               objectFit="cover"
-              className="block sm:hidden opacity-75"
+              className="block sm:hidden opacity-95"
             />
-            <div className="absolute inset-0 bg-gray-800/80"></div>
+            <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
           <section id="roadmap" className="relative z-10 py-20 sm:py-32">
              <div className="container mx-auto max-w-2xl px-4">
@@ -168,7 +168,7 @@ export default function Home() {
               objectFit="cover"
               className="opacity-100"
             />
-            <div className="absolute inset-0 bg-gray-800/90"></div>
+            <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
           <section id="gallery" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto px-4">
