@@ -50,7 +50,7 @@ export default function Home() {
             </div>
             <div className="relative z-10 px-4">
                 <div className="p-8">
-                    <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-wider">
+                    <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
                         <GlitchText
                             speed={1}
                             enableShadows={true}
