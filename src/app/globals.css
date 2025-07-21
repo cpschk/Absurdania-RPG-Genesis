@@ -102,8 +102,8 @@
   }
   .carousel {
       position: relative;
-      width: 300px; /* Wider carousel for desktop */
-      height: 300px;
+      width: 450px; /* Wider carousel for desktop */
+      height: 320px;
       margin: 0 auto;
       transform-style: preserve-3d;
       transition: transform 1s;
@@ -125,6 +125,7 @@
     }
     .carousel {
       width: 220px;
+      height: 300px;
     }
   }
 }
@@ -152,4 +153,5 @@
     .animate-pulse-grow {
       animation: pulse-grow 1.5s ease-in-out infinite; /* Aplica la animación */
     }
+
 
