@@ -139,7 +139,14 @@ export default function Home() {
               alt="Absurdania RPG Roadmap Background"
               layout="fill"
               objectFit="cover"
-              className="opacity-75"
+              className="hidden sm:block opacity-75"
+            />
+             <Image
+              src="/background/movil_background_illustration_roadmap.png"
+              alt="Absurdania RPG Roadmap Background for mobile"
+              layout="fill"
+              objectFit="cover"
+              className="block sm:hidden opacity-75"
             />
             <div className="absolute inset-0 bg-gray-800/80"></div>
           </div>
