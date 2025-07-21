@@ -4,6 +4,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { TierCard } from './TierCard';
 import { useInView } from '@/hooks/use-in-view';
+import Image from 'next/image';
 
 const tiers = [
   { price: 5, reward: 'Nombre en el mural del caos', description: 'Tu nombre quedará inmortalizado en una sección especial de los créditos como uno de los primeros creyentes en esta locura.' },
@@ -32,26 +33,39 @@ export function TierSection() {
   };
 
   return (
-    <section id="tiers" ref={sectionRef} className="py-20 sm:py-32 bg-gray-900">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
-            🤝 Tiers de Apoyo
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {tiers.map((tier, index) => (
-              <TierCard
-                key={index}
-                price={tier.price}
-                reward={tier.reward}
-                description={tier.description}
-                isOpen={openTierIndex === index}
-                onToggle={() => handleToggle(index)}
-              />
-            ))}
-          </div>
+    <div className="relative">
+        <div className="absolute inset-0 z-0">
+        <Image
+            src="https://placehold.co/1920x1080.png"
+            alt="Background for Tiers section"
+            layout="fill"
+            objectFit="cover"
+            className="opacity-20"
+            data-ai-hint="treasure chest"
+        />
+        <div className="absolute inset-0 bg-gray-900/80"></div>
         </div>
-      </div>
-    </section>
+        <section id="tiers" ref={sectionRef} className="relative z-10 py-20 sm:py-32">
+            <div className="container mx-auto max-w-6xl px-4">
+                <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
+                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
+                    🤝 Tiers de Apoyo
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {tiers.map((tier, index) => (
+                    <TierCard
+                        key={index}
+                        price={tier.price}
+                        reward={tier.reward}
+                        description={tier.description}
+                        isOpen={openTierIndex === index}
+                        onToggle={() => handleToggle(index)}
+                    />
+                    ))}
+                </div>
+                </div>
+            </div>
+        </section>
+    </div>
   );
 }
