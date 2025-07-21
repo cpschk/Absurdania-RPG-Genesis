@@ -139,7 +139,7 @@ export default function Home() {
               alt="Absurdania RPG Roadmap Background"
               layout="fill"
               objectFit="cover"
-              className="opacity-40"
+              className="opacity-75"
             />
             <div className="absolute inset-0 bg-gray-800/80"></div>
           </div>
