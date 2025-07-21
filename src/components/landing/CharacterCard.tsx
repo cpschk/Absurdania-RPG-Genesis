@@ -56,7 +56,6 @@ export function CharacterCard({
           "relative w-full h-full preserve-3d transition-transform duration-700 cursor-pointer",
           isFlipped && "rotate-y-180"
         )}
-        style={{ minHeight: '200px' }}
       >
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
