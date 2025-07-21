@@ -24,6 +24,15 @@ const features = [
 ];
 
 export default function Home() {
+  const absurdaniaText = "Absurdania".split('').map((char, index) => {
+    const rotations = ['-rotate-3', 'rotate-2', '-rotate-2', 'rotate-1', '-rotate-1', 'rotate-3', '-rotate-2', 'rotate-2', '-rotate-1', 'rotate-1'];
+    return (
+      <span key={index} className={`inline-block transition-transform hover:scale-110 ${rotations[index % rotations.length]}`}>
+        {char}
+      </span>
+    );
+  });
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
       <Header />
@@ -41,15 +50,16 @@ export default function Home() {
             </div>
             <div className="relative z-10 px-4">
                 <div className="p-8">
-                    <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
+                    <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-wider">
                         <GlitchText
                             speed={1}
                             enableShadows={true}
                             enableOnHover={false}
                             className="inline-block"
                             gradientClassName="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-shimmer bg-[length:200%_100%]"
+                            dataText="Absurdania"
                         >
-                            Absurdania
+                            {absurdaniaText}
                         </GlitchText>
                         {' '}
                         <span className="animate-heartbeat inline-block">RPG</span>

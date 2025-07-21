@@ -1,10 +1,11 @@
 
 "use client";
 
-import { FC, CSSProperties } from "react";
+import { FC, CSSProperties, ReactNode } from "react";
 
 interface GlitchTextProps {
-  children: string;
+  children: ReactNode;
+  dataText: string;
   speed?: number;
   enableShadows?: boolean;
   enableOnHover?: boolean;
@@ -21,6 +22,7 @@ interface CustomCSSProperties extends CSSProperties {
 
 const GlitchText: FC<GlitchTextProps> = ({
   children,
+  dataText,
   speed = 1,
   enableShadows = true,
   enableOnHover = false,
@@ -48,7 +50,7 @@ const GlitchText: FC<GlitchTextProps> = ({
   const combinedClasses = `${baseClasses} ${pseudoClasses} ${className}`;
 
   return (
-    <div style={inlineStyles} data-text={children} className={combinedClasses}>
+    <div style={inlineStyles} data-text={dataText} className={combinedClasses}>
       <span className={gradientClassName}>{children}</span>
     </div>
   );
