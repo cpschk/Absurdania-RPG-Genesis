@@ -11,6 +11,7 @@ import { CTAButton } from '@/components/landing/CTAButton';
 import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
 import Image from 'next/image';
+import GlitchText from '@/components/landing/GlitchText';
 
 const features = [
   { icon: '✊✋✌️', title: 'Combate tipo Piedra-Papel-Tijera con dado20' },
@@ -23,6 +24,15 @@ const features = [
 ];
 
 export default function Home() {
+  const absurdaniaText = "Absurdania".split('').map((char, index) => {
+    const rotations = ['-rotate-3', 'rotate-2', '-rotate-2', 'rotate-1', '-rotate-1', 'rotate-3', '-rotate-2', 'rotate-2', '-rotate-1', 'rotate-1'];
+    return (
+      <span key={index} className={`inline-block transition-transform hover:scale-110 ${rotations[index % rotations.length]}`}>
+        {char}
+      </span>
+    );
+  });
+
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
       <Header />
@@ -40,11 +50,18 @@ export default function Home() {
             </div>
             <div className="relative z-10 px-4">
                 <div className="p-8">
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
-                        <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
-                            Absurdania
-                        </span>{' '}
-                        <span className="animate-heartbeat inline-block">RPG</span>
+                    <h1 className="flex flex-col md:flex-row items-center justify-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
+                        <GlitchText
+                            speed={1}
+                            enableShadows={true}
+                            enableOnHover={false}
+                            className="inline-block"
+                            gradientClassName="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-shimmer bg-[length:200%_100%]"
+                            dataText="Absurdania"
+                        >
+                            {absurdaniaText}
+                        </GlitchText>
+                        <span className="animate-heartbeat inline-block -mt-6 md:mt-0 md:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas
@@ -172,7 +189,7 @@ export default function Home() {
           </div>
           <section id="gallery" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+              <h2 className="text-5xl sm:text-4xl font-bold text-center mb-24 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
                 Galería Absurda
               </h2>
               <AbsurdGallery />
@@ -195,7 +212,7 @@ export default function Home() {
           </div>
           <section id="cta" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto max-w-4xl px-4 text-center">
-               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 tracking-wider">
+               <h2 className="text-4xl sm:text-4xl font-bold text-white mb-6 tracking-wider">
                 📣 Último llamado
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
@@ -213,3 +230,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
+
+

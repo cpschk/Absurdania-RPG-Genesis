@@ -80,7 +80,7 @@ export function CharacterCard({
                     width={160}
                     height={160}
                     className={cn(
-                      "object-contain mx-auto h-24 w-24 md:h-40 md:w-40 mb-2 md:mb-4",
+                      "object-contain mx-auto h-24 w-24 md:h-40 md:w-40 mb-2 md:mb-4 mt-4",
                       isScaledCharacter && "scale-125"
                     )}
                     data-ai-hint={dataAiHint}
@@ -89,7 +89,7 @@ export function CharacterCard({
               ) : (
                 <div className="text-6xl mx-auto my-auto">{icon}</div>
               )}
-              <CardTitle className="text-lg font-bold text-white pt-2">{name}</CardTitle>
+              <CardTitle className="text-g font-bold text-white pt-2">{name}</CardTitle>
             </CardHeader>
           </Card>
         </div>
