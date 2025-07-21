@@ -13,6 +13,7 @@ type CharacterCardProps = {
   "data-ai-hint"?: string;
   isFlipped: boolean;
   onFlip: () => void;
+  isMainCard: boolean;
   phrase?: string;
   description?: string;
   attacks?: string[];
@@ -26,6 +27,7 @@ export function CharacterCard({
   "data-ai-hint": dataAiHint, 
   isFlipped, 
   onFlip,
+  isMainCard,
   phrase,
   description,
   attacks,
@@ -54,11 +56,13 @@ export function CharacterCard({
           "relative w-full h-full preserve-3d transition-transform duration-700 cursor-pointer",
           isFlipped && "rotate-y-180"
         )}
-        style={{ minHeight: '200px' }}
       >
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
-          <Card className="relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
+          <Card className={cn(
+              "relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:-translate-y-2 w-full h-full flex flex-col justify-center",
+              isMainCard && "border-purple-500 shadow-2xl shadow-purple-500/20"
+            )}>
             {type && (
               <Badge 
                 variant={getBadgeVariant(type)} 
@@ -98,12 +102,14 @@ export function CharacterCard({
                  <>
                    <p className="text-sm italic">"{phrase}"</p>
                    <p className="text-xs">{description}</p>
-                   <div>
-                     <h4 className="font-bold text-sm mt-2 mb-1">Ataques:</h4>
-                     <ul className="text-xs list-none p-0">
-                       {attacks.map((attack, i) => <li key={i}>{attack}</li>)}
-                     </ul>
-                   </div>
+                   {attacks.length > 0 && (
+                     <div>
+                       <h4 className="font-bold text-sm mt-2 mb-1">Ataques:</h4>
+                       <ul className="text-xs list-none p-0">
+                         {attacks.map((attack, i) => <li key={i}>{attack}</li>)}
+                       </ul>
+                     </div>
+                   )}
                  </>
                ) : (
                  <p className="text-sm">
