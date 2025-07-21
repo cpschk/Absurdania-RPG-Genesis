@@ -105,14 +105,14 @@ export default function Home() {
         <div className="relative">
            <div className="absolute inset-0 z-0">
             <Image
-              src="https://placehold.co/1920x1080.png"
+              src="/background/background_illustration_features.png"
               alt="Background for Why section"
               layout="fill"
               objectFit="cover"
-              className="opacity-20"
+              className="opacity-80"
               data-ai-hint="glowing runes"
             />
-            <div className="absolute inset-0 bg-gray-800/90"></div>
+            <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
           <section id="why" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto max-w-4xl px-4">
@@ -140,7 +140,7 @@ export default function Home() {
               className="opacity-20"
                data-ai-hint="game elements"
             />
-            <div className="absolute inset-0 bg-gray-900/80"></div>
+            <div className="absolute inset-0 bg-gray-900/70"></div>
           </div>
           <section id="features" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto max-w-5xl px-4">

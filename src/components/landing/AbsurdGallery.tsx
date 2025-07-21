@@ -9,8 +9,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const characters = [
   { icon: '🧠', name: 'Filósofo de Microondas', type: 'NPC' },
-  { icon: '🤡', name: 'Payaso de Guerra', type: 'NPC' },
-  { icon: '🧛', name: 'Vampiro de Redes Sociales', type: 'NPC' },
+  { icon: '🧛', name: 'Vampiro de Redes Sociales', type: 'Enemigo' },
   {
     name: 'Despertador Existencial',
     imageUrl: '/despertador-existencial.png',
@@ -46,7 +45,8 @@ const characters = [
     description: "Un anciano que solo se comunica gritando refranes que nadie entiende.",
     attacks: [],
     type: 'NPC',
-  }
+  },
+  { icon: '🤡', name: 'Payaso de Guerra', type: 'Enemigo' },
 ];
 
 export function AbsurdGallery() {
