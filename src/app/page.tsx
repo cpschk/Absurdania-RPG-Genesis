@@ -135,12 +135,11 @@ export default function Home() {
         <div className="relative">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://placehold.co/1920x1080.png"
-              alt="Background for Roadmap section"
+              src="/background/background_illustration_roadmap.png"
+              alt="Absurdania RPG Roadmap Background"
               layout="fill"
               objectFit="cover"
               className="opacity-20"
-              data-ai-hint="fantasy map"
             />
             <div className="absolute inset-0 bg-gray-800/90"></div>
           </div>
