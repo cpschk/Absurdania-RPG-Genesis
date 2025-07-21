@@ -40,7 +40,7 @@ export default function Home() {
             </div>
             <div className="relative z-10 px-4">
                 <div className="p-8">
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
+                    <h1 className="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tighter">
                         <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-pulse tracking-wider">
                             Absurdania
                         </span>{' '}
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
           <section id="gallery" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
+              <h2 className="text-5xl sm:text-4xl font-bold text-center mb-24 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
                 Galería Absurda
               </h2>
               <AbsurdGallery />
@@ -195,7 +195,7 @@ export default function Home() {
           </div>
           <section id="cta" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto max-w-4xl px-4 text-center">
-               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 tracking-wider">
+               <h2 className="text-4xl sm:text-4xl font-bold text-white mb-6 tracking-wider">
                 📣 Último llamado
               </h2>
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
