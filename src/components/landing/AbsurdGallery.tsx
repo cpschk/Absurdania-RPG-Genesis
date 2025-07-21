@@ -60,6 +60,15 @@ export function AbsurdGallery() {
   const handleCardFlip = (index: number) => {
     setFlippedCardIndex(prevIndex => (prevIndex === index ? null : index));
   };
+  
+  const totalCards = characters.length;
+  const currentCardIndex = (Math.round(-rotation / angle) % totalCards + totalCards) % totalCards;
+
+  const handleCardClick = (index: number) => {
+    if (index === currentCardIndex) {
+      handleCardFlip(index);
+    }
+  };
 
   const handleTouchStart = (e: ReactTouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
@@ -85,10 +94,6 @@ export function AbsurdGallery() {
     }
     setTouchStartX(null);
   };
-  
-  const totalCards = characters.length;
-  const currentCardIndex = (Math.round(-rotation / angle) % totalCards + totalCards) % totalCards;
-
 
   return (
     <div className="flex flex-col items-center space-y-8">
@@ -115,7 +120,7 @@ export function AbsurdGallery() {
                 <CharacterCard
                   {...char}
                   isFlipped={flippedCardIndex === index}
-                  onFlip={() => handleCardFlip(index)}
+                  onFlip={() => handleCardClick(index)}
                 />
               </div>
             );
