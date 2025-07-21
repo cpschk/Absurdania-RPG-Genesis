@@ -218,9 +218,11 @@ export default function Home() {
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 Tienes dos caminos: ignorar esta locura, o ser parte de ella. ¡Haz historia absurda con nosotros!
               </p>
-              <CTAButton>
-                Conviértete en co-Fundador
-              </CTAButton>
+              <div className="mx-auto">
+                <CTAButton>
+                  Conviértete en co-Fundador
+                </CTAButton>
+              </div>
             </div>
           </section>
         </div>
