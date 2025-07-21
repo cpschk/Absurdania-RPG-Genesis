@@ -128,6 +128,7 @@ export function AbsurdGallery() {
                   {...char}
                   isFlipped={flippedCardIndex === index}
                   onFlip={() => handleCardClick(index)}
+                  isMainCard={isMainCard}
                 />
               </div>
             );

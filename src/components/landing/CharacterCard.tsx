@@ -13,6 +13,7 @@ type CharacterCardProps = {
   "data-ai-hint"?: string;
   isFlipped: boolean;
   onFlip: () => void;
+  isMainCard: boolean;
   phrase?: string;
   description?: string;
   attacks?: string[];
@@ -26,6 +27,7 @@ export function CharacterCard({
   "data-ai-hint": dataAiHint, 
   isFlipped, 
   onFlip,
+  isMainCard,
   phrase,
   description,
   attacks,
@@ -58,7 +60,10 @@ export function CharacterCard({
       >
         {/* Front Face */}
         <div className="absolute w-full h-full backface-hidden">
-          <Card className="relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:border-purple-500 hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 w-full h-full flex flex-col justify-center">
+          <Card className={cn(
+              "relative bg-gray-900/50 border-purple-500/20 text-center transition-all duration-300 hover:-translate-y-2 w-full h-full flex flex-col justify-center",
+              isMainCard && "border-purple-500 shadow-2xl shadow-purple-500/20"
+            )}>
             {type && (
               <Badge 
                 variant={getBadgeVariant(type)} 
