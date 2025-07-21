@@ -61,7 +61,7 @@ export default function Home() {
                         >
                             {absurdaniaText}
                         </GlitchText>
-                        <span className="animate-heartbeat inline-block sm:ml-4">RPG</span>
+                        <span className="animate-heartbeat inline-block -mt-4 sm:mt-0 sm:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas
@@ -230,3 +230,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
