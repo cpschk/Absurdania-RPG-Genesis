@@ -103,12 +103,14 @@ export function CharacterCard({
                  <>
                    <p className="text-sm italic">"{phrase}"</p>
                    <p className="text-xs">{description}</p>
-                   <div>
-                     <h4 className="font-bold text-sm mt-2 mb-1">Ataques:</h4>
-                     <ul className="text-xs list-none p-0">
-                       {attacks.map((attack, i) => <li key={i}>{attack}</li>)}
-                     </ul>
-                   </div>
+                   {attacks.length > 0 && (
+                     <div>
+                       <h4 className="font-bold text-sm mt-2 mb-1">Ataques:</h4>
+                       <ul className="text-xs list-none p-0">
+                         {attacks.map((attack, i) => <li key={i}>{attack}</li>)}
+                       </ul>
+                     </div>
+                   )}
                  </>
                ) : (
                  <p className="text-sm">

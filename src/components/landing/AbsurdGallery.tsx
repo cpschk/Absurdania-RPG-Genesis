@@ -37,6 +37,15 @@ const characters = [
     description: "Un buzón hostil que guarda deudas emocionales y facturas vencidas.",
     attacks: ["Factura Letal", "Interés Compuesto"],
     type: 'Enemigo',
+  },
+  {
+    name: 'Abuelo Griton',
+    imageUrl: '/abuelo-griton.png',
+    'data-ai-hint': 'shouting old man',
+    phrase: "¡LAS CABRAS NO USAN RELOJ!, ¡TU NABO ES EL DESTINO!, ¡MIRA A LA IZQUIERDA Y PÁRATE EN UNA PATA!",
+    description: "Un anciano que solo se comunica gritando refranes que nadie entiende.",
+    attacks: [],
+    type: 'NPC',
   }
 ];
 
