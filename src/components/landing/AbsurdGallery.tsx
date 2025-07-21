@@ -1,10 +1,11 @@
 
 'use client';
 
-import { useState, TouchEvent as ReactTouchEvent, MouseEvent } from 'react';
+import { useState, TouchEvent as ReactTouchEvent, MouseEvent, useEffect } from 'react';
 import { CharacterCard } from './CharacterCard';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const characters = [
   { icon: '🧠', name: 'Filósofo de Microondas', type: 'NPC' },
@@ -43,9 +44,15 @@ export function AbsurdGallery() {
   const [rotation, setRotation] = useState(0);
   const [flippedCardIndex, setFlippedCardIndex] = useState<number | null>(null);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const isMobile = useIsMobile();
+  const [carouselWidth, setCarouselWidth] = useState(220);
+
+  useEffect(() => {
+    setCarouselWidth(isMobile ? 300 : 220);
+  }, [isMobile]);
 
   const angle = 360 / characters.length;
-  const tz = Math.round( ( 220 / 2 ) / Math.tan( Math.PI / characters.length ) );
+  const tz = Math.round( ( carouselWidth / 2 ) / Math.tan( Math.PI / characters.length ) );
 
   const handleNext = () => {
     setRotation(rotation - angle);
