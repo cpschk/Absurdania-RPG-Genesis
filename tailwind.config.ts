@@ -79,8 +79,9 @@ export default {
           },
         },
         shimmer: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
         heartbeat: {
           '0%': { transform: 'scale(1)' },
