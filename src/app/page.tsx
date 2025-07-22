@@ -94,7 +94,7 @@ export default function Home() {
                   ¿Qué es Absurdania?
                 </h2>
                 <p className="text-lg text-gray-300 text-center leading-relaxed">
-                  Absurdania RPG es una experiencia narrativa absurda impulsada por IA. Despiertas con un nabo en la frente. Tus decisiones alteran una historia viva y caótica. Cada escena es única. Cada enemigo tiene lógica absurda. Todo lo que haces queda registrado en el lore eterno del caos.
+                  Absurdania RPG es una experiencia narrativa absurda impulsada por IA. Tu aventura comienza despertando  con un nabo en la frente y tus decisiones alteraran la historia, la cual cobrara vida y esta se volvera cada vez mas caótica. Cada escena es única. Cada enemigo tiene lógica absurda. Todo lo que haces queda registrado en el lore eterno del caos.
                 </p>
               </div>
             </div>
