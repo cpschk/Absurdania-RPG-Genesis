@@ -113,7 +113,7 @@ export function CharacterCard({
                     alt={name}
                     fill
                     className={cn(
-                      "object-contain mx-auto",
+                      "object-cover mx-auto",
                       getImageGlowClass(type)
                     )}
                     data-ai-hint={dataAiHint}
