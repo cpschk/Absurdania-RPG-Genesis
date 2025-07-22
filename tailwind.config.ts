@@ -61,6 +61,15 @@ export default {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      textShadow: {
+        'neon-yellow': '0 0 5px #fef08a, 0 0 10px #fef08a, 0 0 20px #fde047, 0 0 30px #fde047',
+      },
+      dropShadow: {
+        'glow-red': '0 0 15px rgba(252, 165, 165, 0.7)',
+        'glow-blue': '0 0 15px rgba(147, 197, 253, 0.7)',
+        'glow-green': '0 0 15px rgba(110, 231, 183, 0.7)',
+        'glow-purple': '0 0 15px rgba(216, 180, 254, 0.7)',
+      },
       keyframes: {
         'accordion-down': {
           from: {
@@ -79,9 +88,8 @@ export default {
           },
         },
         shimmer: {
-          '0%': { backgroundPosition: '0% 50%' },
+          '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
         },
         heartbeat: {
           '0%': { transform: 'scale(1)' },
@@ -91,7 +99,7 @@ export default {
           '70%': { transform: 'scale(1)' },
         },
         'glitch-before': {
-          '0%': { clipPath: 'inset(99% 0 0 0)' },
+          '0%, 20%': { clipPath: 'inset(99% 0 0 0)' },
           '1%': { clipPath: 'inset(21% 0 68% 0)' },
           '2%': { clipPath: 'inset(8% 0 89% 0)' },
           '3%': { clipPath: 'inset(58% 0 29% 0)' },
@@ -115,7 +123,7 @@ export default {
           '21%, 100%': { clipPath: 'inset(0 0 0 0)' },
         },
         'glitch-after': {
-          '0%': { clipPath: 'inset(3% 0 95% 0)' },
+          '0%, 20%': { clipPath: 'inset(3% 0 95% 0)' },
           '1%': { clipPath: 'inset(77% 0 12% 0)' },
           '2%': { clipPath: 'inset(7% 0 82% 0)' },
           '3%': { clipPath: 'inset(59% 0 20% 0)' },
@@ -142,7 +150,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        shimmer: 'shimmer 15s ease-in-out infinite',
+        shimmer: 'shimmer 8s ease-in-out infinite',
         heartbeat: 'heartbeat 1s ease-in-out infinite',
         'glitch-before': 'glitch-before var(--before-duration) infinite linear alternate-reverse',
         'glitch-after': 'glitch-after var(--after-duration) infinite linear alternate-reverse',
@@ -150,5 +158,15 @@ export default {
     },
 
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities, theme }: { addUtilities: any, theme: any }) {
+      const newUtilities = {
+        '.text-shadow-neon-yellow': {
+          textShadow: theme('textShadow.neon-yellow'),
+        },
+      }
+      addUtilities(newUtilities, ['responsive', 'hover'])
+    }
+  ],
 } satisfies Config;
