@@ -124,7 +124,7 @@ export function CharacterCard({
                 )}
               </div>
 
-              <h3 className="absolute bottom-4 left-0 right-0 font-headline text-2xl text-shadow-neon-yellow tracking-wider z-10">{name}</h3>
+              <h3 className="absolute bottom-4 left-0 right-0 font-headline text-3xl text-shadow-neon-yellow tracking-wider z-10">{name}</h3>
             </div>
           </div>
         </div>
