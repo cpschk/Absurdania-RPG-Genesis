@@ -10,7 +10,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const characters = [
   {
     name: 'La Rana Oraculo',
-    imageUrl: '/rana-oraculo.png',
+    imageUrl: '/rana-oraculo-2.png',
     'data-ai-hint': 'the oracle frog',
     phrase: "¡Croac! El bosque escucha... pero no responde. ¿Has traído la llave que abre sin tocar?, La lechuga habla solo si tú callas.",
     description: 'Una rana con túnica que responde enigmas saltando en código binario.',
