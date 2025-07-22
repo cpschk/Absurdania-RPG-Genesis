@@ -8,8 +8,15 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const characters = [
-  { icon: '🧠', name: 'Filósofo de Microondas', type: 'NPC' },
-  { icon: '🧛', name: 'Vampiro de Redes Sociales', type: 'Enemigo' },
+  {
+    name: 'La Rana Oraculo',
+    imageUrl: '/rana-oraculo.png',
+    'data-ai-hint': 'the oracle frog',
+    phrase: "¡Croac! El bosque escucha... pero no responde. ¿Has traído la llave que abre sin tocar?, La lechuga habla solo si tú callas.",
+    description: 'Una rana con túnica que responde enigmas saltando en código binario.',
+    attacks: [],
+    type: 'NPC',
+  },
   {
     name: 'Despertador Existencial',
     imageUrl: '/despertador-existencial.png',
@@ -46,7 +53,33 @@ const characters = [
     attacks: [],
     type: 'NPC',
   },
-  { icon: '🤡', name: 'Payaso de Guerra', type: 'Enemigo' },
+  {
+    name: 'Hongos Llorones',
+    imageUrl: '/hongo-lloron.png',
+    'data-ai-hint': 'weeping mushrooms',
+    phrase: "Nunca pedí ser comestible...",
+    description: "Crecen en la tristeza y se marchitan con la empatía. No los subestimes.",
+    attacks: ["Lágrimas Ácidas", "Esporas Emotivas"],
+    type: 'Enemigo',
+  },
+  {
+    name: 'Zanahoria Sagrada',
+    imageUrl: '/zanahoria-sagrada.png',
+    'data-ai-hint': 'sacred carrot',
+    phrase: '¡Levantate a trabajar!',
+    description: "Revive al jugador con 50 HP si es derrotado.",
+    attacks: [],
+    type: 'Objeto',
+  },
+  {
+    name: 'Ardillas Metafisicas',
+    imageUrl: '/ardillas-metafisicas.png',
+    'data-ai-hint': 'metaphysical squirrels',
+    phrase: "¿Y si somos solo pensamientos en forma de roedor?",
+    description: "Estas ardillas no solo recolectan nueces, sino también dudas existenciales.",
+    attacks: ["Lluvia de Dudas", "Salto Cuántico"],
+    type: 'Enemigo',
+  },
 ];
 
 export function AbsurdGallery() {
