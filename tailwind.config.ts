@@ -65,7 +65,10 @@ export default {
         'neon-yellow': '0 0 5px #fef08a, 0 0 10px #fef08a, 0 0 20px #fde047, 0 0 30px #fde047',
       },
       dropShadow: {
-        'glow': '0 0 20px rgba(255, 255, 255, 0.4)',
+        'glow-red': '0 0 15px rgba(252, 165, 165, 0.7)',
+        'glow-blue': '0 0 15px rgba(147, 197, 253, 0.7)',
+        'glow-green': '0 0 15px rgba(110, 231, 183, 0.7)',
+        'glow-purple': '0 0 15px rgba(216, 180, 254, 0.7)',
       },
       keyframes: {
         'accordion-down': {

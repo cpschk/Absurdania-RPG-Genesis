@@ -72,6 +72,18 @@ export function CharacterCard({
     }
   }
 
+  const getImageGlowClass = (type?: string) => {
+    switch (type) {
+      case 'Enemigo':
+        return 'drop-shadow-glow-red';
+      case 'Objeto':
+        return 'drop-shadow-glow-blue';
+      case 'NPC':
+        return 'drop-shadow-glow-green';
+      default:
+        return 'drop-shadow-glow-purple';
+    }
+  }
 
   const isScaledCharacter = name === 'Despertador Existencial' || name === 'Espada de Fideos' || name === 'Buzon Cobrador';
 
@@ -105,14 +117,15 @@ export function CharacterCard({
                       width={180}
                       height={180}
                       className={cn(
-                        "object-contain mx-auto drop-shadow-glow",
+                        "object-contain mx-auto",
+                         getImageGlowClass(type),
                          isScaledCharacter ? "scale-110" : "scale-90",
                       )}
                       data-ai-hint={dataAiHint}
                     />
                   </div>
                 ) : (
-                  <div className="text-8xl mx-auto my-auto drop-shadow-glow">{icon}</div>
+                  <div className={cn("text-8xl mx-auto my-auto", getImageGlowClass(type))}>{icon}</div>
                 )}
               </div>
 
