@@ -85,8 +85,6 @@ export function CharacterCard({
     }
   }
 
-  const isScaledCharacter = name === 'Despertador Existencial' || name === 'Espada de Fideos' || name === 'Buzon Cobrador';
-
   return (
     <div className="perspective w-full h-full" onClick={onFlip}>
       <div
@@ -101,37 +99,32 @@ export function CharacterCard({
             "relative w-full h-full rounded-2xl p-[2px] transition-all duration-300",
             isMainCard ? `bg-gradient-to-br ${getBorderColorClass(type)} shadow-2xl ${getGlowColorClass(type)}` : 'bg-gray-800'
           )}>
-            <div className="relative w-full h-full bg-gray-900 rounded-[14px] flex flex-col justify-between items-center text-center p-4">
+            <div className="relative w-full h-full bg-gray-900 rounded-[14px] flex flex-col justify-center items-center text-center p-4">
               {type && (
-                <div className={cn("absolute top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full border text-xs font-bold uppercase tracking-widest shadow-lg", getTypePillClass(type))}>
+                <div className={cn("absolute top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full border text-xs font-bold uppercase tracking-widest shadow-lg z-10", getTypePillClass(type))}>
                    {type}
                 </div>
               )}
               
-              <div className="flex-grow flex items-center justify-center pt-8">
+              <div className="flex-grow flex items-center justify-center w-full h-full">
                  {imageUrl ? (
-                  <div className="flex-grow flex items-center justify-center">
-                    <Image
-                      src={imageUrl}
-                      alt={name}
-                      width={180}
-                      height={180}
-                      className={cn(
-                        "object-contain mx-auto",
-                         getImageGlowClass(type),
-                         isScaledCharacter ? "scale-90" : "scale-110",
-                      )}
-                      data-ai-hint={dataAiHint}
-                    />
-                  </div>
+                  <Image
+                    src={imageUrl}
+                    alt={name}
+                    fill
+                    className={cn(
+                      "object-contain mx-auto",
+                      getImageGlowClass(type)
+                    )}
+                    data-ai-hint={dataAiHint}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                 ) : (
                   <div className={cn("text-8xl mx-auto my-auto", getImageGlowClass(type))}>{icon}</div>
                 )}
               </div>
 
-              <div className="w-full">
-                <h3 className="font-headline text-2xl text-shadow-neon-yellow tracking-wider">{name}</h3>
-              </div>
+              <h3 className="absolute bottom-4 left-0 right-0 font-headline text-2xl text-shadow-neon-yellow tracking-wider z-10">{name}</h3>
             </div>
           </div>
         </div>
