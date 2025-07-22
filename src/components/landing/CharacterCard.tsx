@@ -119,7 +119,7 @@ export function CharacterCard({
                       className={cn(
                         "object-contain mx-auto",
                          getImageGlowClass(type),
-                         isScaledCharacter ? "scale-110" : "scale-90",
+                         isScaledCharacter ? "scale-90" : "scale-110",
                       )}
                       data-ai-hint={dataAiHint}
                     />
