@@ -112,7 +112,7 @@ export function AbsurdGallery() {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-8">
+    <div className="flex flex-col items-center space-y-8 md:space-y-16">
       <div 
         className="carousel-container h-[320px] w-full"
         onTouchStart={handleTouchStart}
