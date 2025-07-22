@@ -63,6 +63,7 @@ export default {
       },
       textShadow: {
         'neon-yellow': '0 0 5px #fef08a, 0 0 10px #fef08a, 0 0 20px #fde047, 0 0 30px #fde047',
+        'outline': '1px 1px 2px black, -1px -1px 2px black, 1px -1px 2px black, -1px 1px 2px black',
       },
       dropShadow: {
         'glow-red': '0 0 15px rgba(252, 165, 165, 0.7)',
@@ -164,6 +165,9 @@ export default {
       const newUtilities = {
         '.text-shadow-neon-yellow': {
           textShadow: theme('textShadow.neon-yellow'),
+        },
+        '.text-outline': {
+          textShadow: theme('textShadow.outline'),
         },
       }
       addUtilities(newUtilities, ['responsive', 'hover'])
