@@ -144,11 +144,20 @@ export function AbsurdGallery() {
   useEffect(() => {
     startAutoplay();
     return () => stopAutoplay();
-  }, [rotation]);
+  }, []);
 
 
   const handleCardFlip = (index: number) => {
-    setFlippedCardIndex(prevIndex => (prevIndex === index ? null : index));
+    const isCurrentlyFlipped = flippedCardIndex === index;
+    setFlippedCardIndex(isCurrentlyFlipped ? null : index);
+
+    if (isCurrentlyFlipped) {
+      // If we are flipping it back, resume autoplay after a delay
+      interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
+    } else {
+      // If we are flipping it open, stop autoplay
+      stopAutoplay();
+    }
   };
   
   const totalCards = characters.length;
@@ -182,9 +191,12 @@ export function AbsurdGallery() {
       } else {
         handleInteraction(handleNext);
       }
+    } else {
+        // if it's a tap, not a swipe, maybe resume autoplay?
+        // for now, let's keep it paused until user navigates or flips back
+        interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
     }
     setTouchStartX(null);
-    interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
   };
   
   return (
