@@ -238,7 +238,13 @@ export default function Home() {
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 Tienes dos caminos: ignorar esta locura, o ser parte de ella. ¡Haz historia absurda con nosotros!
               </p>
-              <div className="mx-auto">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <CTAButton>
+                    <span className="flex flex-col items-center">
+                        <span>¡Testea la Demo!</span>
+                        <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
+                    </span>
+                </CTAButton>
                 <CTAButton>
                   Conviértete en co-Fundador
                 </CTAButton>
@@ -259,3 +265,4 @@ export default function Home() {
 
 
     
+
