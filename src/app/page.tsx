@@ -13,16 +13,13 @@ import { ScrollToTop } from '@/components/landing/ScrollToTop';
 import Image from 'next/image';
 import GlitchText from '@/components/landing/GlitchText';
 import Link from 'next/link';
+import { roadmapPhases } from '@/lib/roadmap-data';
 
-const features = [
-  { icon: '✊✋✌️', title: 'Combate tipo Piedra-Papel-Tijera con dado20' },
-  { icon: '🤖', title: 'Narrativa generada por IA' },
-  { icon: '👾', title: 'Enemigos con historia propia' },
-  { icon: '📜', title: 'Misiones y desbloqueos' },
-  { icon: '🗺️', title: 'Zonas interconectadas' },
-  { icon: '⚙️', title: 'Backend modular ya funcional' },
-  { icon: '🧪', title: 'Testers activos ya jugando' },
-];
+const features = roadmapPhases
+  .flatMap(phase => phase.features)
+  .filter(feature => feature.status === 'Done' || feature.status === 'In Progress')
+  .map(feature => ({ icon: feature.icon || '✨', title: feature.name }));
+
 
 export default function Home() {
   const absurdaniaText = "Absurdania"
