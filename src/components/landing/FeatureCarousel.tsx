@@ -2,6 +2,7 @@
 "use client";
 
 import * as React from "react"
+import Autoplay from "embla-carousel-autoplay"
 import {
   Carousel,
   CarouselContent,
@@ -25,6 +26,10 @@ export function FeatureCarousel({ features }: FeatureCarouselProps) {
   const [api, setApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
+  
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+  )
 
   React.useEffect(() => {
     if (!api) {
@@ -48,9 +53,14 @@ export function FeatureCarousel({ features }: FeatureCarouselProps) {
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-pink-600 text-transparent bg-clip-text">
         ¿Con qué cuenta ya el juego?
       </h2>
-      <div className="flex flex-col items-center">
+      <div 
+        className="flex flex-col items-center"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
         <Carousel
           setApi={setApi}
+          plugins={[plugin.current]}
           opts={{
             align: "start",
             loop: true,
@@ -77,6 +87,7 @@ export function FeatureCarousel({ features }: FeatureCarouselProps) {
               className={`h-2 w-2 rounded-full transition-colors ${
                 current === index + 1 ? 'bg-purple-500' : 'bg-gray-500'
               }`}
+              aria-label={`Go to slide ${index + 1}`}
             />
           ))}
         </div>

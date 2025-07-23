@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, TouchEvent as ReactTouchEvent, MouseEvent, useEffect } from 'react';
+import { useState, TouchEvent as ReactTouchEvent, MouseEvent, useEffect, useRef } from 'react';
 import { CharacterCard } from './CharacterCard';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -97,23 +97,55 @@ export function AbsurdGallery() {
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const isMobile = useIsMobile();
   const [carouselWidth, setCarouselWidth] = useState(450);
+  const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     setCarouselWidth(isMobile ? 220 : 450);
   }, [isMobile]);
 
   const angle = 360 / characters.length;
-  const tz = Math.round( ( carouselWidth / 2 ) / Math.tan( Math.PI / characters.length ) );
+  const tz = Math.round((carouselWidth / 2) / Math.tan(Math.PI / characters.length));
 
   const handleNext = () => {
     setRotation(rotation - angle);
-    setFlippedCardIndex(null); 
+    setFlippedCardIndex(null);
   };
 
   const handlePrev = () => {
     setRotation(rotation + angle);
-    setFlippedCardIndex(null); 
+    setFlippedCardIndex(null);
   };
+  
+  const stopAutoplay = () => {
+    if (autoplayIntervalRef.current) {
+      clearInterval(autoplayIntervalRef.current);
+      autoplayIntervalRef.current = null;
+    }
+    if (interactionTimeoutRef.current) {
+        clearTimeout(interactionTimeoutRef.current);
+    }
+  };
+  
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayIntervalRef.current = setInterval(() => {
+        handleNext();
+    }, 4000);
+  };
+
+  const handleInteraction = (action: () => void) => {
+    stopAutoplay();
+    action();
+    interactionTimeoutRef.current = setTimeout(startAutoplay, 5000); // Resume autoplay after 5 seconds of inactivity
+  };
+
+
+  useEffect(() => {
+    startAutoplay();
+    return () => stopAutoplay();
+  }, [rotation]);
+
 
   const handleCardFlip = (index: number) => {
     setFlippedCardIndex(prevIndex => (prevIndex === index ? null : index));
@@ -130,6 +162,7 @@ export function AbsurdGallery() {
 
   const handleTouchStart = (e: ReactTouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
+    stopAutoplay();
   };
 
   const handleTouchMove = (e: ReactTouchEvent<HTMLDivElement>) => {
@@ -145,14 +178,15 @@ export function AbsurdGallery() {
 
     if (Math.abs(deltaX) > 50) { // Swipe threshold
       if (deltaX > 0) {
-        handlePrev();
+        handleInteraction(handlePrev);
       } else {
-        handleNext();
+        handleInteraction(handleNext);
       }
     }
     setTouchStartX(null);
+    interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
   };
-
+  
   return (
     <div className="flex flex-col items-center space-y-8 md:space-y-16">
       <div 
@@ -187,11 +221,11 @@ export function AbsurdGallery() {
         </div>
       </div>
       <div className="flex space-x-4">
-        <Button onClick={handlePrev} variant="outline" size="icon" className="bg-gray-800 hover:bg-gray-700">
+        <Button onClick={() => handleInteraction(handlePrev)} variant="outline" size="icon" className="bg-gray-800 hover:bg-gray-700">
           <ArrowLeft className="h-4 w-4" />
           <span className="sr-only">Previous</span>
         </Button>
-        <Button onClick={handleNext} variant="outline" size="icon" className="bg-gray-800 hover:bg-gray-700">
+        <Button onClick={() => handleInteraction(handleNext)} variant="outline" size="icon" className="bg-gray-800 hover:bg-gray-700">
           <ArrowRight className="h-4 w-4" />
           <span className="sr-only">Next</span>
         </Button>
