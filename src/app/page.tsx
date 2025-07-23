@@ -137,13 +137,20 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
                 ¿Por qué apoyar ahora?
               </h2>
-              <ul className="space-y-6 text-center text-lg text-gray-300 max-w-2xl mx-auto">
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">✔️ Ya es jugable</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">👑 Puedes aparecer como personaje, enemigo o jefe</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">🚀 Ayudas a expandirlo a app, multijugador y más</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">✨ Es un proyecto único en su especie</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">📜 Solo los primeros formarán parte del lore fundacional</li>
-              </ul>
+              <div className="space-y-8 max-w-2xl mx-auto text-gray-300">
+                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">🎮 Si eres jugador curioso...</h3>
+                  <p>Descubrirás una historia imposible, jugable en 5 minutos, gratis y desde tu celular.</p>
+                </div>
+                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">🧙‍♀️ Si eres amante del rol...</h3>
+                  <p>Este proyecto mezcla IA, combates por turnos y decisiones absurdamente narrativas. No hay dos partidas iguales.</p>
+                </div>
+                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">💰 Si quieres apoyar algo único...</h3>
+                  <p>Tu apoyo financia directamente el desarrollo. Recibirás beneficios exclusivos y serás parte del lore.</p>
+                </div>
+              </div>
             </div>
           </section>
         </div>
