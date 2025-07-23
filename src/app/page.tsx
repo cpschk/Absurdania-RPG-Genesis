@@ -93,16 +93,22 @@ export default function Home() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl space-y-8">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-                    🧙‍♂️ ¿Qué es Absurdania?
+                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+                    <span>🧙‍♂️ </span>
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
+                      ¿Qué es Absurdania?
+                    </span>
                   </h3>
                   <p className="text-lg text-gray-300 text-center leading-relaxed max-w-2xl mx-auto">
                     Absurdania es un juego de rol narrativo jugado desde Discord, donde cada escena, decisión o combate es creado por inteligencia artificial en tiempo real.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
-                    🤯 ¿Qué lo hace único?
+                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+                    <span>🤯 </span>
+                    <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+                      ¿Qué lo hace único?
+                    </span>
                   </h3>
                   <ul className="text-lg text-gray-300 text-center leading-relaxed max-w-2xl mx-auto space-y-2 list-inside">
                     <li>- Juegas escribiendo. Vives una historia nueva cada vez.</li>
