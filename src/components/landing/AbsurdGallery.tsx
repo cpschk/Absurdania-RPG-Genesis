@@ -80,6 +80,15 @@ const characters = [
     attacks: ["Lluvia de Dudas", "Salto Cuántico"],
     type: 'Enemigo',
   },
+  {
+    name: 'Dragón de la Deuda',
+    imageUrl: '/dragon-de-la-deuda.png',
+    'data-ai-hint': 'Debt Dragon',
+    phrase: "Te devoraré con mi fuego fiscal.",
+    description: "Un dragón colosal cubierto de facturas impagas y escamas que representan tasas de interés variables.",
+    attacks: ["Fuego Fiscal", "Interés Exponencial", "Multa Inesperada"],
+    type: 'Enemigo',
+  },
 ];
 
 export function AbsurdGallery() {
