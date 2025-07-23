@@ -183,7 +183,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
           <section id="roadmap" className="relative z-10 py-20 sm:py-32">
-             <div className="container mx-auto max-w-2xl px-4">
+             <div className="container mx-auto max-w-5xl px-4">
                 <RoadmapSection />
              </div>
           </section>
