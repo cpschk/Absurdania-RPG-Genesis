@@ -52,7 +52,7 @@ export default function Home() {
                         >
                             {absurdaniaText}
                         </GlitchText>
-                        <span className="animate-heartbeat inline-block -mt-6 sm:mt-0 sm:ml-4">RPG</span>
+                        <span className="animate-heartbeat inline-block -mt-4 sm:mt-0 sm:ml-2">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas.
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
           <section id="roadmap" className="relative z-10 py-20 sm:py-32">
-             <div className="container mx-auto max-w-2xl px-4">
+             <div className="container mx-auto max-w-5xl px-4">
                 <RoadmapSection />
              </div>
           </section>
