@@ -49,9 +49,9 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
             </div>
-            <div className="relative z-10 px-4">
+            <div className="relative z-10 px-4 pt-20 sm:pt-0">
                 <div className="p-8">
-                    <h1 className="flex flex-col md:flex-row items-center justify-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
+                    <h1 className="flex flex-col sm:flex-row items-center justify-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
                         <GlitchText
                             speed={1}
                             enableShadows={true}
@@ -62,7 +62,7 @@ export default function Home() {
                         >
                             {absurdaniaText}
                         </GlitchText>
-                        <span className="animate-heartbeat inline-block -mt-6 md:mt-0 md:ml-4">RPG</span>
+                        <span className="animate-heartbeat inline-block -mt-6 sm:mt-0 sm:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas.
