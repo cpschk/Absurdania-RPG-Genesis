@@ -55,7 +55,7 @@ export default function Home() {
                         >
                             {absurdaniaText}
                         </GlitchText>
-                        <span className="animate-heartbeat inline-block -mt-4 sm:mt-0 sm:ml-8">RPG</span>
+                        <span className="animate-heartbeat inline-block -mt-6 sm:mt-0 sm:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas.
@@ -133,15 +133,15 @@ export default function Home() {
                 ¿Por qué apoyar ahora?
               </h2>
               <div className="space-y-8 max-w-2xl mx-auto text-gray-300">
-                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
                   <h3 className="font-bold text-xl mb-2">🎮 Si eres jugador curioso...</h3>
                   <p>Descubrirás una historia imposible, jugable en 5 minutos, gratis y desde tu celular.</p>
                 </div>
-                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
                   <h3 className="font-bold text-xl mb-2">🧙‍♀️ Si eres amante del rol...</h3>
                   <p>Este proyecto mezcla IA, combates por turnos y decisiones absurdamente narrativas. No hay dos partidas iguales.</p>
                 </div>
-                <div className="p-6 bg-gray-900/50 rounded-lg shadow-lg transition-transform hover:scale-105">
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
                   <h3 className="font-bold text-xl mb-2">💰 Si quieres apoyar algo único...</h3>
                   <p>Tu apoyo financia directamente el desarrollo. Recibirás beneficios exclusivos y serás parte del lore.</p>
                 </div>
