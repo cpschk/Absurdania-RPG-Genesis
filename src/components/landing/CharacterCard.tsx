@@ -111,7 +111,7 @@ export function CharacterCard({
                   <Image
                     src={imageUrl}
                     alt={name}
-                    fill
+                    fill={true}
                     className={cn(
                       "object-contain mx-auto scale-90",
                       getImageGlowClass(type)
