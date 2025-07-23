@@ -67,7 +67,6 @@ export default function Home() {
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         El juego donde el caos piensa y el absurdo tiene reglas.
                         Un mundo tan incoherente… que tiene todo el sentido.
-                        Juega gratis desde Discord. Elige. Combate. Sobrevive. Reescribe la realidad.
                     </p>
                     <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
                       <CTAButton>
