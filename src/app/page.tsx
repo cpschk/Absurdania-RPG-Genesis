@@ -64,12 +64,14 @@ export default function Home() {
                         <span className="animate-heartbeat inline-block -mt-6 md:mt-0 md:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-                        El juego donde el caos piensa y el absurdo tiene reglas
+                        El juego donde el caos piensa y el absurdo tiene reglas.
+                        Un mundo tan incoherente… que tiene todo el sentido.
+                        Juega gratis desde Discord. Elige. Combate. Sobrevive. Reescribe la realidad.
                     </p>
                     <CTAButton>
                         <span className="flex flex-col items-center">
-                            <span>¡Únete al caos creativo!</span>
-                            <span className="text-sm font-normal opacity-80">En Discord... por ahora!</span>
+                            <span>¡Testea la Demo!</span>
+                            <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
                         </span>
                     </CTAButton>
                 </div>
