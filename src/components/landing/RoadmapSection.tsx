@@ -1,3 +1,4 @@
+
 import { CheckSquare, Square } from 'lucide-react';
 
 type Feature = {
@@ -44,10 +45,10 @@ export function RoadmapSection() {
       version: 'Versión 1.0',
       title: 'El Caos Despierta',
       features: [
+        { text: 'Misiones y narrativa IA', completed: true },
+        { text: 'Testers activos', completed: true },
         { text: 'Exploración libre', completed: true },
         { text: 'Combates funcionales (clásico y PPJ)', completed: false },
-        { text: 'Misiones y narrativa IA', completed: false },
-        { text: 'Testers activos', completed: false },
       ],
       gradient: 'from-blue-400 to-cyan-400'
     },
