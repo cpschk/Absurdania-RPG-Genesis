@@ -12,6 +12,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
 import Image from 'next/image';
 import GlitchText from '@/components/landing/GlitchText';
+import Link from 'next/link';
 
 const features = [
   { icon: '✊✋✌️', title: 'Combate tipo Piedra-Papel-Tijera con dado20' },
@@ -68,12 +69,14 @@ export default function Home() {
                         Un mundo tan incoherente… que tiene todo el sentido.
                         Juega gratis desde Discord. Elige. Combate. Sobrevive. Reescribe la realidad.
                     </p>
-                    <CTAButton>
-                        <span className="flex flex-col items-center">
-                            <span>¡Testea la Demo!</span>
-                            <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
-                        </span>
-                    </CTAButton>
+                    <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
+                      <CTAButton>
+                          <span className="flex flex-col items-center">
+                              <span>¡Testea la Demo!</span>
+                              <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
+                          </span>
+                      </CTAButton>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -239,15 +242,19 @@ export default function Home() {
                 Tienes dos caminos: ignorar esta locura, o ser parte de ella. ¡Haz historia absurda con nosotros!
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <CTAButton>
-                    <span className="flex flex-col items-center">
-                        <span>¡Testea la Demo!</span>
-                        <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
-                    </span>
-                </CTAButton>
-                <CTAButton>
-                  Conviértete en co-Fundador
-                </CTAButton>
+                <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
+                  <CTAButton>
+                      <span className="flex flex-col items-center">
+                          <span>¡Testea la Demo!</span>
+                          <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
+                      </span>
+                  </CTAButton>
+                </Link>
+                <Link href="#tiers">
+                  <CTAButton>
+                    Conviértete en co-Fundador
+                  </CTAButton>
+                </Link>
               </div>
             </div>
           </section>
@@ -258,11 +265,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-
-
-
-    
-
