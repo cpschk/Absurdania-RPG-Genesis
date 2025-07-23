@@ -10,7 +10,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const characters = [
   {
     name: 'La Rana Oraculo',
-    imageUrl: '/rana-oraculo.png',
+    imageUrl: '/rana-oraculo-2.png',
     'data-ai-hint': 'the oracle frog',
     phrase: "¡Croac! El bosque escucha... pero no responde. ¿Has traído la llave que abre sin tocar?, La lechuga habla solo si tú callas.",
     description: 'Una rana con túnica que responde enigmas saltando en código binario.',
@@ -78,6 +78,15 @@ const characters = [
     phrase: "¿Y si somos solo pensamientos en forma de roedor?",
     description: "Estas ardillas no solo recolectan nueces, sino también dudas existenciales.",
     attacks: ["Lluvia de Dudas", "Salto Cuántico"],
+    type: 'Enemigo',
+  },
+  {
+    name: 'Dragón de la Deuda',
+    imageUrl: '/dragon-de-la-deuda.png',
+    'data-ai-hint': 'Debt Dragon',
+    phrase: "Te devoraré con mi fuego fiscal.",
+    description: "Un dragón colosal cubierto de facturas impagas y escamas que representan tasas de interés variables.",
+    attacks: ["Fuego Fiscal", "Interés Exponencial", "Multa Inesperada"],
     type: 'Enemigo',
   },
 ];

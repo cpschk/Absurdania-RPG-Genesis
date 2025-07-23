@@ -107,21 +107,23 @@ export function CharacterCard({
               )}
               
               <div className="flex-grow flex items-center justify-center w-full h-full">
-                 {imageUrl ? (
-                  <Image
-                    src={imageUrl}
-                    alt={name}
-                    fill
-                    className={cn(
-                      "object-contain mx-auto scale-90",
-                      getImageGlowClass(type)
-                    )}
-                    data-ai-hint={dataAiHint}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                ) : (
-                  <div className={cn("text-8xl mx-auto my-auto", getImageGlowClass(type))}>{icon}</div>
-                )}
+                <div className="relative flex-grow flex items-center justify-center w-full h-full">
+                  {imageUrl ? (
+                    <Image
+                      src={imageUrl}
+                      alt={name}
+                      fill={true}
+                      className={cn(
+                        "object-contain mx-auto scale-90",
+                        getImageGlowClass(type)
+                      )}
+                      data-ai-hint={dataAiHint}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <div className={cn("text-8xl mx-auto my-auto", getImageGlowClass(type))}>{icon}</div>
+                  )}
+                </div>
               </div>
 
               <h3 className="absolute bottom-4 left-0 right-0 font-headline text-3xl text-white text-outline drop-shadow-glow-purple tracking-wider z-10">{name}</h3>

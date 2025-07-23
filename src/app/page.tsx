@@ -12,27 +12,18 @@ import { Footer } from '@/components/landing/Footer';
 import { ScrollToTop } from '@/components/landing/ScrollToTop';
 import Image from 'next/image';
 import GlitchText from '@/components/landing/GlitchText';
+import Link from 'next/link';
+import { roadmapPhases } from '@/lib/roadmap-data';
 
-const features = [
-  { icon: '✊✋✌️', title: 'Combate tipo Piedra-Papel-Tijera con dado20' },
-  { icon: '🤖', title: 'Narrativa generada por IA' },
-  { icon: '👾', title: 'Enemigos con historia propia' },
-  { icon: '📜', title: 'Misiones y desbloqueos' },
-  { icon: '🗺️', title: 'Zonas interconectadas' },
-  { icon: '⚙️', title: 'Backend modular ya funcional' },
-  { icon: '🧪', title: 'Testers activos ya jugando' },
-];
+const features = roadmapPhases
+  .flatMap(phase => phase.features)
+  .filter(feature => feature.status === 'Done' || feature.status === 'In Progress')
+  .map(feature => ({ icon: feature.icon || '✨', title: feature.name }));
+
 
 export default function Home() {
-  const absurdaniaText = "Absurdania".split('').map((char, index) => {
-    const rotations = ['-rotate-3', 'rotate-2', '-rotate-2', 'rotate-1', '-rotate-1', 'rotate-3', '-rotate-2', 'rotate-2', '-rotate-1', 'rotate-1'];
-    return (
-      <span key={index} className={`inline-block transition-transform hover:scale-110 ${rotations[index % rotations.length]}`}>
-        {char}
-      </span>
-    );
-  });
-
+  const absurdaniaText = "Absurdania"
+ 
   return (
     <div className="flex flex-col min-h-screen bg-gray-900 overflow-x-hidden">
       <Header />
@@ -48,9 +39,9 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-900/10 to-gray-900 animate-[shimmer_20s_ease-in-out_infinite] bg-[size:200%_200%]" />
             </div>
-            <div className="relative z-10 px-4">
+            <div className="relative z-10 px-4 pt-20 sm:pt-0">
                 <div className="p-8">
-                    <h1 className="flex flex-col md:flex-row items-center justify-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
+                    <h1 className="flex flex-col sm:flex-row items-center justify-center text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white mb-4 tracking-wider">
                         <GlitchText
                             speed={1}
                             enableShadows={true}
@@ -61,17 +52,20 @@ export default function Home() {
                         >
                             {absurdaniaText}
                         </GlitchText>
-                        <span className="animate-heartbeat inline-block -mt-6 md:mt-0 md:ml-4">RPG</span>
+                        <span className="animate-heartbeat inline-block -mt-6 sm:mt-0 sm:ml-4">RPG</span>
                     </h1>
                     <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
-                        El juego donde el caos piensa y el absurdo tiene reglas
+                        El juego donde el caos piensa y el absurdo tiene reglas.
+                        Un mundo tan incoherente… que tiene todo el sentido.
                     </p>
-                    <CTAButton>
-                        <span className="flex flex-col items-center">
-                            <span>¡Únete al caos creativo!</span>
-                            <span className="text-sm font-normal opacity-80">En Discord... por ahora!</span>
-                        </span>
-                    </CTAButton>
+                    <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
+                      <CTAButton>
+                          <span className="flex flex-col items-center">
+                              <span>¡Testea la Demo!</span>
+                              <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
+                          </span>
+                      </CTAButton>
+                    </Link>
                 </div>
             </div>
         </div>
@@ -89,13 +83,31 @@ export default function Home() {
           </div>
           <section id="about" className="relative z-10 py-20 sm:py-32">
             <div className="container mx-auto max-w-4xl px-4">
-              <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl">
-                <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
-                  ¿Qué es Absurdania?
-                </h2>
-                <p className="text-lg text-gray-300 text-center leading-relaxed">
-                  Absurdania RPG es una experiencia narrativa absurda impulsada por IA. Tu aventura comienza despertando  con un nabo en la frente y tus decisiones alteraran la historia, la cual cobrara vida y esta se volvera cada vez mas caótica. Cada escena es única. Cada enemigo tiene lógica absurda. Todo lo que haces queda registrado en el lore eterno del caos.
-                </p>
+              <div className="p-8 bg-gray-700/20 backdrop-blur-lg border border-purple-500/20 rounded-2xl shadow-2xl space-y-8">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+                    <span>🧙‍♂️ </span>
+                    <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-transparent bg-clip-text">
+                      ¿Qué es Absurdania?
+                    </span>
+                  </h3>
+                  <p className="text-lg text-gray-300 text-center leading-relaxed max-w-2xl mx-auto">
+                    Absurdania es un juego de rol narrativo jugado desde Discord, donde cada escena, decisión o combate es creado por inteligencia artificial en tiempo real.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-center mb-4">
+                    <span>🤯 </span>
+                    <span className="bg-gradient-to-r from-cyan-400 to-blue-500 text-transparent bg-clip-text">
+                      ¿Qué lo hace único?
+                    </span>
+                  </h3>
+                  <ul className="text-lg text-gray-300 text-center leading-relaxed max-w-2xl mx-auto space-y-2 list-inside">
+                    <li>- Juegas escribiendo. Vives una historia nueva cada vez.</li>
+                    <li>- Puedes combatir con papel higiénico mental o negociar con un cuervo comunista.</li>
+                    <li>- Todo es posible. En serio.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -117,13 +129,20 @@ export default function Home() {
               <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-500 text-transparent bg-clip-text">
                 ¿Por qué apoyar ahora?
               </h2>
-              <ul className="space-y-6 text-center text-lg text-gray-300 max-w-2xl mx-auto">
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">✔️ Ya es jugable</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">👑 Puedes aparecer como personaje, enemigo o jefe</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">🚀 Ayudas a expandirlo a app, multijugador y más</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">✨ Es un proyecto único en su especie</li>
-                <li className="p-4 bg-gray-900/50 rounded-lg shadow-md transition-transform hover:scale-105">📜 Solo los primeros formarán parte del lore fundacional</li>
-              </ul>
+              <div className="space-y-8 max-w-2xl mx-auto text-gray-300">
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">🎮 Si eres jugador curioso...</h3>
+                  <p>Descubrirás una historia imposible, jugable en 5 minutos, gratis y desde tu celular.</p>
+                </div>
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">🧙‍♀️ Si eres amante del rol...</h3>
+                  <p>Este proyecto mezcla IA, combates por turnos y decisiones absurdamente narrativas. No hay dos partidas iguales.</p>
+                </div>
+                <div className="p-6 bg-gray-900/70 rounded-lg shadow-lg transition-transform hover:scale-105">
+                  <h3 className="font-bold text-xl mb-2">💰 Si quieres apoyar algo único...</h3>
+                  <p>Tu apoyo financia directamente el desarrollo. Recibirás beneficios exclusivos y serás parte del lore.</p>
+                </div>
+              </div>
             </div>
           </section>
         </div>
@@ -159,6 +178,7 @@ export default function Home() {
               alt="Absurdania RPG Roadmap Background for mobile"
               fill={true}              
               className="block sm:hidden opacity-95"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
@@ -211,10 +231,20 @@ export default function Home() {
               <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 Tienes dos caminos: ignorar esta locura, o ser parte de ella. ¡Haz historia absurda con nosotros!
               </p>
-              <div className="mx-auto">
-                <CTAButton>
-                  Conviértete en co-Fundador
-                </CTAButton>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="https://discord.gg/NHGNScvS" target="_blank" rel="noopener noreferrer">
+                  <CTAButton>
+                      <span className="flex flex-col items-center">
+                          <span>¡Testea la Demo!</span>
+                          <span className="text-sm font-normal opacity-80">Funcional en  Discord...</span>
+                      </span>
+                  </CTAButton>
+                </Link>
+                <Link href="#tiers">
+                  <CTAButton>
+                    Conviértete en co-Fundador
+                  </CTAButton>
+                </Link>
               </div>
             </div>
           </section>
@@ -225,7 +255,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-
