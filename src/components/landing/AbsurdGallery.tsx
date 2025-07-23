@@ -108,12 +108,12 @@ export function AbsurdGallery() {
   const tz = Math.round((carouselWidth / 2) / Math.tan(Math.PI / characters.length));
 
   const handleNext = () => {
-    setRotation(rotation - angle);
+    setRotation(r => r - angle);
     setFlippedCardIndex(null);
   };
 
   const handlePrev = () => {
-    setRotation(rotation + angle);
+    setRotation(r => r + angle);
     setFlippedCardIndex(null);
   };
   
@@ -124,39 +124,41 @@ export function AbsurdGallery() {
     }
     if (interactionTimeoutRef.current) {
         clearTimeout(interactionTimeoutRef.current);
+        interactionTimeoutRef.current = null;
     }
   };
   
   const startAutoplay = () => {
-    stopAutoplay();
+    stopAutoplay(); // Stop any existing timers
     autoplayIntervalRef.current = setInterval(() => {
         handleNext();
     }, 4000);
   };
-
+  
   const handleInteraction = (action: () => void) => {
     stopAutoplay();
     action();
-    interactionTimeoutRef.current = setTimeout(startAutoplay, 5000); // Resume autoplay after 5 seconds of inactivity
+    // Resume autoplay after 5 seconds of inactivity
+    interactionTimeoutRef.current = setTimeout(startAutoplay, 5000); 
   };
 
 
   useEffect(() => {
     startAutoplay();
     return () => stopAutoplay();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
   const handleCardFlip = (index: number) => {
     const isCurrentlyFlipped = flippedCardIndex === index;
+    
+    stopAutoplay();
     setFlippedCardIndex(isCurrentlyFlipped ? null : index);
 
     if (isCurrentlyFlipped) {
       // If we are flipping it back, resume autoplay after a delay
       interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
-    } else {
-      // If we are flipping it open, stop autoplay
-      stopAutoplay();
     }
   };
   
@@ -192,9 +194,8 @@ export function AbsurdGallery() {
         handleInteraction(handleNext);
       }
     } else {
-        // if it's a tap, not a swipe, maybe resume autoplay?
-        // for now, let's keep it paused until user navigates or flips back
-        interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
+      // if it's a tap, resume autoplay after a delay
+      interactionTimeoutRef.current = setTimeout(startAutoplay, 5000);
     }
     setTouchStartX(null);
   };
