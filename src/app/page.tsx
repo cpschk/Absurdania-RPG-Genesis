@@ -181,6 +181,7 @@ export default function Home() {
               alt="Absurdania RPG Roadmap Background for mobile"
               fill={true}              
               className="block sm:hidden opacity-95"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gray-800/70"></div>
           </div>
